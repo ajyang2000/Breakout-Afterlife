@@ -9,43 +9,22 @@ PSEUDOCODE for Breakout: Afterlife
 
 --program starts--
 
-The User enters the Title Screen:
-	the User can press START to enter the main menu at any time,
-		POLISH stage- this prompt will be casually displayed at the bottom of the screen while this happens:
-			a very simple ai paddle simulates gameplay by sending off a ball in a random direction and following it to deflect it from hitting the 
-			bottom of the screen (LATER development, or POLISH stage for sure lol)
 
-		POLISH stage- it would be cool to have bricks load in on the top half of the screen in the formation of a string that displays the title of the game
-			as the player waits on this screen, the ai paddle will slowly but surely chip away at the brick formation that constitues the title
+--TITLE SCREEN--
+----------------
 
-The User enters the Main Menu Screen:
+I have moved all this code under the main game loop marked with TITLE SCREEN.
+The main game loop will be a priority over the title screen.
 
-	The main_menu( ) opens up with these MENU.MANE.BUTTONS** :
-
-		 [-New Game-]***
-		  [-Options-]
-		  [-Credits-]
-		   [-Quit-]
-	
-	-New Game is highlighted when the player enters the scene- (Cam, VFX)
-	The player can press the up/down arrow keys or D-pad buttons to navigate these options
-		-Which will be swiftly responded to by a soft tick SFX (consider yourself warned)- (for Cam to do, SFX)
-		-This will also change the hightlighted menu option in the direction the player chooses- (Cam, VFX)
-			
-	The player can also press the ACTION button (spacebar on keyboard or X)** to enter whichever menu button is currently highlighted
-		-a "boiyoiyoing" sound plays to indicate that the player has made their choice- (Cam, SFX)
-		-the highlighted menu option will react in some way to indicate the finality of their choice- (Cam, VFX)
-		The player will enter the respective scene or menu
-
-	If player chooses New Game
-		A new save file is created in the player's honor. *4*
-		Enter Main Game Loop--->
+Just know that it goes...
+	***HERE***
 
 
-__GAME LOOP__
-------------------
 
-The player enters the Game Menu screen, greeted by these options/buttons:
+--GAME LOOP--
+-------------
+
+The player enters the Game Menu screen, greeted by these options/buttons:	[game menu - (Cam, graphics + menu design)]
 
 	[-Start-]
 	[-Inventory-]
@@ -53,34 +32,39 @@ The player enters the Game Menu screen, greeted by these options/buttons:
 	[-Options-]
 	[-Quit-]
 
-The player uses the same controls as above to navigate the menu and select a menu button
+The player uses the same controls as above to navigate the menu and select a menu button (moved with TITLE SCREEN)
 -meanwhile the regular Menu VFX and SFX happen- (Cam, VFX + SFX)
+-a dedicated game menu song plays here- (Cam, music)
 
+I plan to write the pseudo for INVENTORY and SHOP screens below the TITLE SCREEN section in this doc.
+For now, we have the most important things happening here:
 
-The player plays the game _LeveltoLevel_ until they die or beat the game
-	The bricks all load into place. The brick formation is unique to each level
+The player chooses [-Start-] to play the game _LeveltoLevel_ until they die or beat the game
+	The bricks all load into place. The brick formation is unique to each level 		[bricks - (Cam, graphics + level design)]
 	-The background VFX begin- (for Cam to do, VFX)
-	A single ball is connected to the player's paddle, and is released when the player presses the "action" button,
+	-A small tune to indicate the start of the level begins- (Cam, SFX)
+	-The main gameplay music either starts or continues to player here- (Cam, music)
+	A single ball is connected to the player's paddle, and is released when the player presses the "action" button:	[ball + paddle - (Cam, graphics)]
 		(keyboard key "spacebar")
-		(Dualshock controller button "X")
+		(Dualshock controller button "X") *2*
 		-boop SFX happens- (Cam, SFX)
 
 		The ball starts moving in a random, generally upward-facing direction
 		It continues on its trajectory until it collides with a wall or brick
+
 		If the ball hits a brick:
-			-boom/crack SFX happens- (Cam, SFX)
+			-boom/crack SFX happens to tell the player they really did something there- (Cam, SFX)
 			-VFX to indicate the impact (light up)- (Cam, SFX)
 			The brick loses a certain amount of hp equal to the strength or power the ball currently has. *5*
-			Does the brick have 0 or less hp right now?
-				-That brick dead af, break/explode VFX- (Cam, VFX)
-				-break/explode SFX- (Cam, SFX)
+			If the brick has 0 or less hp right now
+				That brick dead af
+				-break/explode SFX/VFX to further satisfy the player's desire for meaningless destruction- (Cam, SFX/VFX)
 				Did that brick have any special items in it?
 					drop the item/boost/buff slowly down towards the bottome of the screen for the player to collect it (or avoid it)
 				
-
 		Elseif the ball hits a wall:
 			oh god here comes more trigonometry, *6*
-				which makes things happen
+				(which makes things happen HERE)
 			-smol boop SFX happens- (Cam, SFX)
 			-maybe some tiny little particles to show the impact- (Cam, VFX)
 
@@ -88,17 +72,20 @@ The player plays the game _LeveltoLevel_ until they die or beat the game
 			(Cam, SFX + VFX)
 			send the ball off in a generally upward-facing direction
 				if the player hit the ball close to the right edge of the paddle:
-					the direction should redirect rightward
+					the direction should redirect slightly more rightward
 				elseif the player hit the ball close to the left edge of the paddle:
-					the direction should redirect leftward
+					the direction should redirect slightly more leftward
 				else
 					do the normal trig. to bounce the ball away just the same as on the wall impact
+				-smol, but slightly more confident boop than wall boop SFX happens- (Cam, SFX)
+				-a VFX could go here- (Cam, VFX)
 
 		Elseif the ball hits the player's shield:
 			ouchie. player's shield loses hp
 			deflect the ball as if it hit a wall
 			if player's shield hp <= 0:
-				shield drops, and panic ensues O_O
+				shield drops
+				panic ensues O_O
 				-so much SFX + VFX to warn the player not to let that shit happen ever again or else bad things- (Cam, VFX + SFX)
 
 		Elseif the ball hits the newly exposed bottom of the screen:
@@ -126,6 +113,7 @@ They reach a boss stage
 	The boss's paddle/ball is generated at the top of the screen
 	The level begins as usual
 	-an absolute hurricane worth of SFX and VFX to accompany this epic battle- (Cam, SFX + VFX)
+	-music changes the mood to a music track that is unique to this particular boss battle- (Cam, music)
 	If the player beats the boss they enter a rewards screen where any bonuses or unlocks are displayed:
 
 
@@ -142,6 +130,8 @@ They reach a boss stage
 			UNLESS this is the last boss, in which case:
 				-thanks for playing! you won!-
 				-credits-
+				(Cam, VFX + SFX)
+				-dedicated credits track begins- (Cam, music)
 				End Game and go back to the start of _Game Loop_
 				(I feel like there inevitably has to be something more that happens here, as per the theme XD )
 				
@@ -150,14 +140,56 @@ They reach a boss stage
 		Treat it like a normal level losing, the whole GAME-OVER shabang,
 			Then go back to the Game Menu at the start of the main _Game Loop_
 
+-------------------------
+--end of main GAME LOOP--
+-------------------------
 
+
+
+--TITLE SCREEN--
+----------------
+
+
+The player enters the Title Screen:
+	The Player can press START to enter the Main Menu at any time
+		(This prompt will be casually displayed at the bottom of the screen) *7*
+		-cha-shing SFX happens-
+	-title/main menu music begins and continues until the player enters a new or loaded game- (Cam
+
+The User enters the Main Menu Screen:
+
+	The main_menu( ) opens up with these MENU.MANE.BUTTONS *1* :
+
+		 [-New Game-] *3*
+		  [-Options-]
+		  [-Credits-]
+		   [-Quit-]
+	
+	-New Game is highlighted when the player enters the scene- (Cam, VFX)
+	The player can press the up/down arrow keys or D-pad buttons to navigate these options
+		-Which will be swiftly responded to by a soft tick SFX (consider yourself warned)- (for Cam to do, SFX)
+		-This will also change the hightlighted menu option in the direction the player chooses- (Cam, VFX)
+			
+	The player can also press the ACTION button (spacebar on keyboard or X)*2* to enter whichever menu button is currently highlighted
+		-a "boiyoiyoing" sound plays to indicate that the player has made their choice- (Cam, SFX)
+		-the highlighted menu option will react in some way to indicate the finality of their choice- (Cam, VFX)
+		The player will enter the respective scene or menu
+
+	If player chooses New Game
+		A new save file is created in the player's honor. *4*
+		Enter Main Game Loop--->
+
+
+--------------------
+--end TITLE SCREEN--
+--------------------
 
 
 
 
 NOTES
 
-* I'm not sure if "MAIN" is a restricted keyword in this context, so I'm just placeholding that word with "MANE" for now to indicate that..
+*1* I'm not sure if "MAIN" is a restricted keyword in this context, so I'm just placeholding that word with "MANE" for now to indicate that..
 		the player is currently located in the main menu.
 	And to that point, the term "MENU" could come with its own complications. lmao...
 
@@ -166,9 +198,9 @@ NOTES
     ^^ this is a big resource to find answers to those types of questions for sure ^^
 
 
-** I'm a Playstation guy all the way, so I'll just use that controller's mapping for now
+*2* I'm a Playstation guy all the way, so I'll just use that controller's mapping for now
 
-*** POLISH STAGE - Maybe the menu could be built to add in a [-Load Game-] if the player has an active save file
+*3* POLISH STAGE - Maybe the menu could be built to add in a [-Load Game-] if the player has an active save file
 
 *4* POLISH STAGE - I'm not super familiar with the "industry standard" as far as saving player progress goes. Can we pop it into a .json file? a .txt?
 	I genuinely have no idea lol. If we have time near the end, we can have the autosave occur after each boss is beat
@@ -177,3 +209,10 @@ NOTES
 	The ball's power may also be temporarily multiplied or divided by a boost or buff, respectively
 
 *6* I can always do my best to help out with the mathematical part if needed. otherwise bless your soul for inevitably doing a much better job on it than I ever will lol
+
+*7* POLISH stage- meanwhile:
+		a very simple ai paddle simulates gameplay by sending off a ball in a random direction and following it to deflect it from hitting the 
+		bottom of the screen (LATER development, or POLISH stage for sure lol)
+
+ 	POLISH stage- it would be cool to have bricks load in on the top half of the screen in the formation of a string that displays the title of the game
+		as the player waits on this screen, the ai paddle will slowly but surely chip away at the brick formation that constitues the title
