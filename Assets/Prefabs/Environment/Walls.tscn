@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Sprites/wall_blue.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/wall_green.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/wall_gray.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 16 )
+
+[node name="Node" type="Node"]
+
+[node name="WallBlue" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WallBlue"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallBlue/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="WallGreen" type="Sprite" parent="."]
+position = Vector2( 40, 0 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WallGreen"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallGreen/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="WallGray" type="Sprite" parent="."]
+position = Vector2( 80, 0 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WallGray"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallGray/StaticBody2D"]
+shape = SubResource( 1 )
