@@ -1,9 +1,28 @@
-SEUDOCODE for Breakout: Afterlife
+PSEUDOCODE for Breakout: Afterlife
 
 
-[*, ***, *5*] - examples of references to notes that I leave at the bottom of this file. That way you can CTRL+F your down there and back up to read some extra thoughts on the topics marked
+*1* - example of reference to a note that I leave at the bottom of this file
+	That way you can CTRL+F your down there and back up to read some extra thoughts on the topics marked
 
-"POLISH stage" is a term that clarifies that those things are not crucial to the finished game. They just might make it feel really nice if we find the time to do it
+"POLISH stage" is a term that clarifies that those things are not crucial to the finished game.
+	They just might make it feel really nice if we find the time to do it
+
+
+
+CONTROLS:
+
+--controller-- (dualshock mapping)
+D-pad or left analog stick - navigation + movement
+X - ACTION
+0 - BACK/EXIT
+START - START or PAUSE
+
+--keyboard--
+directional buttons - navigation + movement
+spacebar - ACTION
+Z - BACK/EXIT
+enter - START or PAUSE
+
 
 
 
@@ -13,7 +32,7 @@ SEUDOCODE for Breakout: Afterlife
 --TITLE SCREEN--
 ----------------
 
-I have moved all this code under the main game loop marked with TITLE SCREEN.
+I have moved all this code under the main game loop marked with TITLE SCREEN
 The main game loop will be a priority over the title screen.
 
 Just know that it goes...
@@ -33,71 +52,71 @@ The player enters the Game Menu screen, greeted by these options/buttons:	[game 
 	[-Quit-]
 
 The player uses the same controls as above to navigate the menu and select a menu button (moved with TITLE SCREEN)
--meanwhile the regular Menu VFX and SFX h appen- (Cam, VFX + SFX)
--a dedicated game menu song plays here- (Cam, music)
+-regular Menu VFX happen- (Cam, VFX)
+SFX-1,2
+music- "game menu"
 
 I plan to write the pseudo for INVENTORY and SHOP screens below the TITLE SCREEN section in this doc. (SHOP done!)
 For now, we have the most important things happening here:
 
 The player chooses [-Start-] to play the game _LeveltoLevel_ until they die or beat the game
+	
+	**create a pause menu at some point using regular menu sfx**
+	music- "breakout: afterlife"
 	The bricks all load into place. The brick formation is unique to each level 		[bricks - (Cam, graphics + level design)]
 	-The background VFX begin- (for Cam to do, VFX)
-	-A small tune to indicate the start of the level begins- (Cam, SFX)
+	-A small tune to indicate the start of the level begins- (Cam, music)
 	-The main gameplay music either starts or continues to player here- (Cam, music)
 	A single ball is connected to the player's paddle, and is released when the player presses the "action" button:	[ball + paddle - (Cam, graphics)]
-		(keyboard key "spacebar")
-		(Dualshock controller button "X") *2*
-		-boop SFX happens- (Cam, SFX)
+		SFX-0
 
 		The ball starts moving in a random, generally upward-facing direction
 		It continues on its trajectory until it collides with a wall or brick
 
 		If the ball hits a brick:
-			-boom/crack SFX happens to tell the player they really did something there- (Cam, SFX)
-			-VFX to indicate the impact (light up)- (Cam, SFX)
 			The brick loses a certain amount of hp equal to the strength or power the ball currently has. *5*
 			If the brick has 0 or less hp right now
-				That brick dead af
-				-break/explode SFX/VFX to further satisfy the player's desire for meaningless destruction- (Cam, SFX/VFX)
-				Did that brick have any special items in it?
+				SFX-8
+				VFX-explode
+				if brick contains special item:
 					drop the item/boost/buff slowly down towards the bottome of the screen for the player to collect it (or avoid it)
+			Else:
+				SFX-7
+				VFX-brick blinks
 				
 		Elseif the ball hits a wall:
-			oh god here comes more trigonometry, *6*
-				(which makes things happen HERE)
-			-smol boop SFX happens- (Cam, SFX)
+			SFX-7
 			-maybe some tiny little particles to show the impact- (Cam, VFX)
 
 		Elseif the ball hits the player's paddle:
-			(Cam, SFX + VFX)
+			SFX-9
 			send the ball off in a generally upward-facing direction
 				if the player hit the ball close to the right edge of the paddle:
 					the direction should redirect slightly more rightward
 				elseif the player hit the ball close to the left edge of the paddle:
 					the direction should redirect slightly more leftward
-				else
-					do the normal trig. to bounce the ball away just the same as on the wall impact
-				-smol, but slightly more confident boop than wall boop SFX happens- (Cam, SFX)
-				-a VFX could go here- (Cam, VFX)
 
 		Elseif the ball hits the player's shield:
 			ouchie. player's shield loses hp
 			deflect the ball as if it hit a wall
-			if player's shield hp <= 0:
-				shield drops
-				panic ensues O_O
-				-so much SFX + VFX to warn the player not to let that shit happen ever again or else bad things- (Cam, VFX + SFX)
+			if player's shield hp > 0:
+				SFX-3
+				VFX- shield blinks
+			else
+				SFX-3+4
+				shield blinks then drops
 
 		Elseif the ball hits the newly exposed bottom of the screen:
-			GAME OVER happens
-			-all those other SFX and VFX didn't keep you from letting this happen again? Well now you get some more to indicate that
-				we told you this would happen- (Cam, VFX + SFX)
-			The player then returns to the beginning of the main _Game Loop_ to think about what they just did
+			GAME OVER screen
+			music - sad game over
+			return to game menu
 			They can then spend their money on permanent upgrades in the shop to ensure this doesn't happen again
 			
 				
 				
 	For each Level beat:
+		The screen closes in accordian-style to allow the next level to load in.
+		graphic - loading screen
 		The player earns a small amount of PERMA tokens, which they can use later in the SHOP
 		The background changes slightly in some way to indicate that the player is in a new level
 		Any temporary effects or bonuses applied to the paddle, ball or balls, and bricks during the this level are deactivated
@@ -109,6 +128,7 @@ The player chooses [-Start-] to play the game _LeveltoLevel_ until they die or b
 	
 
 They reach a boss stage
+	music - "suspense"
 	The bricks are loaded in as usual, following this boss battle's unique brick formation
 	The boss's paddle/ball is generated at the top of the screen
 	The level begins as usual
@@ -122,15 +142,15 @@ They reach a boss stage
 								      [-ITEM get!-] 
 
 				[-(displays picture of FANCY. NEW. PADDLE. that you just unlocked for making it this far)-]
-					-also, so much SFX and VFX happen here. much congratulate-- (Cam, VFX + SFX)
+			
+			
 
 		
-			The player presses X or spacebar to continue, which will be displayed to them so they know
+			The player presses ACTION button or START to continue, which will be displayed to them so they know
 			They are then teleported to a new world where they essentially go back to the start _LeveltoLevel_ loop and play increasingly harder levels
 			UNLESS this is the last boss, in which case:
 				-thanks for playing! you won!-
 				-credits-
-				(Cam, VFX + SFX)
 				-dedicated credits track begins- (Cam, music)
 				End Game and go back to the start of _Game Loop_
 				(I feel like there inevitably has to be something more that happens here, as per the theme XD )
@@ -151,14 +171,15 @@ They reach a boss stage
 
 
 The player enters the Title Screen:
-	The Player can press START to enter the Main Menu at any time
+	music - washed out, slowed version of "breakout: afterlife"
+	The Player can press START/ENTER to enter the Main Menu at any time
 		(This prompt will be casually displayed at the bottom of the screen) *7*
-		-cha-shing SFX happens-
-	-title/main menu music begins and continues until the player enters a new or loaded game- (Cam
+		SFX-0
+	-title/main menu music begins and continues until the player enters a new or loaded game- (Cam, music)
 
 The User enters the Main Menu Screen:
 
-	The main_menu( ) opens up with these MENU.MANE.BUTTONS *1* :
+	The main_menu( ) opens up with these MENU.MANE.BUTTONS *1* :  
 
 		 [-New Game-] *3*
 		  [-Options-]
@@ -167,11 +188,11 @@ The User enters the Main Menu Screen:
 	
 	-New Game is highlighted when the player enters the scene- (Cam, VFX)
 	The player can press the up/down arrow keys or D-pad buttons to navigate these options
-		-Which will be swiftly responded to by a soft tick SFX (consider yourself warned)- (for Cam to do, SFX)
+		SFX-1
 		-This will also change the hightlighted menu option in the direction the player chooses- (Cam, VFX)
 			
-	The player can also press the ACTION button (spacebar on keyboard or X)*2* to enter whichever menu button is currently highlighted
-		-a "boiyoiyoing" sound plays to indicate that the player has made their choice- (Cam, SFX)
+	The player presses ACTION button to enter whichever menu button is currently highlighted
+		SFX-2
 		-the highlighted menu option will react in some way to indicate the finality of their choice- (Cam, VFX)
 		The player will enter the respective scene or menu
 
@@ -184,13 +205,16 @@ The User enters the Main Menu Screen:
 --end TITLE SCREEN--
 --------------------
 
+
+
 -- SHOP SCENE --
 ----------------
-Credit to Alex J for helping Cam with this portion! You rock!
+
+Credit to irl friend Alex J for helping Cam with this portion! You rock!
 
 The player enters the shop
 The default highlighted option on the menu is the topmost and leftmost item
-The viewing window on the righthand side of the screen is created blank
+The viewing window on the righthand side of the screen is loaded in blank
 The player's PERMA upgrade tokens are displayed on the top left of the screen
 The player sees 3 categories of options (maximum of 3 items in each category)
     [-paddles/attachments-]
@@ -199,19 +223,26 @@ The player sees 3 categories of options (maximum of 3 items in each category)
 Price and image should be displayed in each item box
 Display name of each category over each respective column
 For any item spaces that are not available put "SOLD OUT" in that space
-At any given time the player can press the action button (x or spacebar) the player will choose the highlighted box to be displayed in the viewing window
-	When item gets opened in viewing window, 75% of the viewing window is image of item you're viewing and 25% dedicated to info/specs about item. 
+At any given time the player can press the ACTION button to choose the highlighted item to be displayed in the viewing window
+	When item renders in viewing window, 75% of the viewing window is image of item you're viewing and 25% dedicated to info/specs about item. 
 	Highlighted window item will also prompt the "buy now" or "cancel" buttons to appear side by side under this viewing window
+	If the player has enough tokens they are removed from their inventory and the bought item is added to their inventory
   	(default selection should be cancel to avoid frustration of accidentally buying something)
 	(The space the buy now and cancel buttons take up will always be open but only appear when item is in the viewing windows)
-Player presses the buy now button
-    If the player has enough tokens they are removed from their inventory and the bought item is added to their inventory
-    If they do not have enough tokens play a "bwah bwah" sound effect 😦 (Cam sfx, vfx maybe number of tokens shakes a little bit? Token numbers turn red?)
-    If the player does not have enough tokens in their inventory the buy now button should look less inviting/grayed out
-They can also press circle to cancel 
-    When a player does this, play a sound effect and remove it from the viewing window
+	
+	Player presses the buy now button
+		If they have enough PERMA tokens:
+			SFX-6
+			VFX-display "SOLD" before shrinking the item display down to nothing to clear the viewing window
+    		If they do not have enough tokens:
+			SFX-5
+			VFX-maybe number of tokens shakes a little bit? Token numbers turn red?
+	They can also press circle to cancel
+		SFX-9
+When a player does this, play a sound effect and remove it from the viewing window
 After an item is purchased the viewing window will become blank
-The player can press circle to exit the shop when not viewing an item or press the exit button on the bottom right of the screen (Cam sfx, vfx)
+The player can press BACK/EXIT button to exit the shop when not viewing an item or press the exit button on the bottom right of the screen
+	SFX-9
 
 
 
@@ -225,13 +256,6 @@ NOTES
 *1* I'm not sure if "MAIN" is a restricted keyword in this context, so I'm just placeholding that word with "MANE" for now to indicate that..
 		the player is currently located in the main menu.
 	And to that point, the term "MENU" could come with its own complications. lmao...
-
-			https://docs.godotengine.org/en/stable/index.html
-
-    ^^ this is a big resource to find answers to those types of questions for sure ^^
-
-
-*2* I'm a Playstation guy all the way, so I'll just use that controller's mapping for now
 
 *3* POLISH STAGE - Maybe the menu could be built to add in a [-Load Game-] if the player has an active save file
 
@@ -252,3 +276,20 @@ NOTES
 
 *8* Every time the player starts playing the game, the shop is refreshed/updated. I'm kinda considering just having one item available in each category
 		Each time the shop is refreshed, we will pull randomly from our array of purchasable items, ensuring that we choose something other than what's currently there.
+
+--Credits--
+-----------
+
+Programmer - Alexander Yang
+Creative Director - Cameron Smith
+	
+	-made with Godot-
+
+Color Palette - Endesga 32 palette by ENDESGA, lospec.com
+Concept Design - Alexander Johnson
+Playtesting - 
+	?Adrian Santiago
+	?Alexander Johnson
+	?Caleb Smith
+	?Cash Smith
+
