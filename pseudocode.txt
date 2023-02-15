@@ -1,4 +1,4 @@
-PSEUDOCODE for Breakout: Afterlife
+SEUDOCODE for Breakout: Afterlife
 
 
 [*, ***, *5*] - examples of references to notes that I leave at the bottom of this file. That way you can CTRL+F your down there and back up to read some extra thoughts on the topics marked
@@ -33,10 +33,10 @@ The player enters the Game Menu screen, greeted by these options/buttons:	[game 
 	[-Quit-]
 
 The player uses the same controls as above to navigate the menu and select a menu button (moved with TITLE SCREEN)
--meanwhile the regular Menu VFX and SFX happen- (Cam, VFX + SFX)
+-meanwhile the regular Menu VFX and SFX h appen- (Cam, VFX + SFX)
 -a dedicated game menu song plays here- (Cam, music)
 
-I plan to write the pseudo for INVENTORY and SHOP screens below the TITLE SCREEN section in this doc.
+I plan to write the pseudo for INVENTORY and SHOP screens below the TITLE SCREEN section in this doc. (SHOP done!)
 For now, we have the most important things happening here:
 
 The player chooses [-Start-] to play the game _LeveltoLevel_ until they die or beat the game
@@ -184,7 +184,40 @@ The User enters the Main Menu Screen:
 --end TITLE SCREEN--
 --------------------
 
+-- SHOP SCENE --
+----------------
+Credit to Alex J for helping Cam with this portion! You rock!
 
+The player enters the shop
+The default highlighted option on the menu is the topmost and leftmost item
+The viewing window on the righthand side of the screen is created blank
+The player's PERMA upgrade tokens are displayed on the top left of the screen
+The player sees 3 categories of options (maximum of 3 items in each category)
+    [-paddles/attachments-]
+    [-ball upgrades-]
+    [-boost gems-] *8*
+Price and image should be displayed in each item box
+Display name of each category over each respective column
+For any item spaces that are not available put "SOLD OUT" in that space
+At any given time the player can press the action button (x or spacebar) the player will choose the highlighted box to be displayed in the viewing window
+	When item gets opened in viewing window, 75% of the viewing window is image of item you're viewing and 25% dedicated to info/specs about item. 
+	Highlighted window item will also prompt the "buy now" or "cancel" buttons to appear side by side under this viewing window
+  	(default selection should be cancel to avoid frustration of accidentally buying something)
+	(The space the buy now and cancel buttons take up will always be open but only appear when item is in the viewing windows)
+Player presses the buy now button
+    If the player has enough tokens they are removed from their inventory and the bought item is added to their inventory
+    If they do not have enough tokens play a "bwah bwah" sound effect 😦 (Cam sfx, vfx maybe number of tokens shakes a little bit? Token numbers turn red?)
+    If the player does not have enough tokens in their inventory the buy now button should look less inviting/grayed out
+They can also press circle to cancel 
+    When a player does this, play a sound effect and remove it from the viewing window
+After an item is purchased the viewing window will become blank
+The player can press circle to exit the shop when not viewing an item or press the exit button on the bottom right of the screen (Cam sfx, vfx)
+
+
+
+------------------
+--end SHOP SCENE--
+------------------
 
 
 NOTES
@@ -216,3 +249,6 @@ NOTES
 
  	POLISH stage- it would be cool to have bricks load in on the top half of the screen in the formation of a string that displays the title of the game
 		as the player waits on this screen, the ai paddle will slowly but surely chip away at the brick formation that constitues the title
+
+*8* Every time the player starts playing the game, the shop is refreshed/updated. I'm kinda considering just having one item available in each category
+		Each time the shop is refreshed, we will pull randomly from our array of purchasable items, ensuring that we choose something other than what's currently there.
