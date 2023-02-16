@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/UI/MainTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Scripts/Menus/LevelDoneMenu.gd" type="Script" id=2]
+
+[node name="LevelDoneMenu" type="Control"]
+margin_right = 1024.0
+margin_bottom = 768.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -512.0
+margin_right = 512.0
+margin_bottom = 200.0
+bbcode_enabled = true
+bbcode_text = "[center]Level Done. Congratulations[/center]"
+text = "Level Done. Congratulations"
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -136.0
+margin_top = -24.0
+margin_right = 136.0
+margin_bottom = 24.0
+text = "Reset Level"

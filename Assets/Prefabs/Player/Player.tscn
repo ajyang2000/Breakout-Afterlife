@@ -4,14 +4,15 @@
 [ext_resource path="res://Assets/Scripts/Player/Player.gd" type="Script" id=2]
 
 [node name="Player" type="KinematicBody2D"]
-scale = Vector2( 0.15, 0.15 )
+scale = Vector2( 0.2, 0.2 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="PlayerMap" type="TileMap" parent="."]
+scale = Vector2( 0.25, 0.25 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 24, 32 )
+cell_size = Vector2( 64, 80 )
 collision_use_parent = true
 format = 1

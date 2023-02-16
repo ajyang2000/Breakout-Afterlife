@@ -1,17 +1,22 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Prefabs/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tileset/WallTileset.tres" type="TileSet" id=2]
 [ext_resource path="res://Assets/Prefabs/Ball/Ball.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/DynamicLevel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Menus/LevelDoneMenu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Menus/GameOverMenu.tscn" type="PackedScene" id=6]
 
 [node name="World" type="Node"]
 
 [node name="DynamicLevel" parent="." instance=ExtResource( 4 )]
 position = Vector2( 32, 32 )
+rows = 4
+columns = 24
+difficulty = 3
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 464, 729 )
+position = Vector2( 528, 728 )
 scale = Vector2( 1, 1 )
 
 [node name="Ball" parent="." instance=ExtResource( 3 )]
@@ -23,4 +28,11 @@ cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 0, 1, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 1, 0, 65536, 1, 0, 65567, 1, 0, 131072, 1, 0, 131103, 1, 0, 196608, 1, 0, 196639, 1, 0, 262144, 1, 0, 262175, 1, 0, 327680, 1, 0, 327711, 1, 0, 393216, 1, 0, 393247, 1, 0, 458752, 1, 0, 458783, 1, 0, 524288, 1, 0, 524319, 1, 0, 589824, 1, 0, 589855, 1, 0, 655360, 1, 0, 655391, 1, 0, 720896, 1, 0, 720927, 1, 0, 786432, 1, 0, 786463, 1, 0, 851968, 1, 0, 851999, 1, 0, 917504, 1, 0, 917535, 1, 0, 983040, 1, 0, 983071, 1, 0, 1048576, 1, 0, 1048607, 1, 0, 1114112, 1, 0, 1114143, 1, 0, 1179648, 1, 0, 1179679, 1, 0, 1245184, 1, 0, 1245215, 1, 0, 1310720, 1, 0, 1310751, 1, 0, 1376256, 1, 0, 1376287, 1, 0, 1441792, 1, 0, 1441823, 1, 0, 1507328, 1, 0, 1507359, 1, 0 )
 
+[node name="GameOverMenu" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="LevelDoneMenu" parent="." instance=ExtResource( 5 )]
+visible = false
+
 [connection signal="brick_hit" from="Ball" to="DynamicLevel" method="_on_brick_hit"]
+[connection signal="game_over" from="Ball" to="GameOverMenu" method="_on_game_over"]

@@ -1,8 +1,6 @@
 extends Node
 
 const _brick = preload("res://Assets/Prefabs/Environment/Brick.tscn")
-const _cell_width = 96
-const _cell_height = 32
 
 export var rows = 3
 export var columns = 10
@@ -22,21 +20,24 @@ func _ready():
 				pass
 			elif random < 0.7:
 				var brick = _brick.instance()
-				_init_brick(brick, brick.BrickType.BLUE, row, column, true)
-			elif random < 0.9:
+				_init_brick(brick, brick.BrickType.WHITE, row, column, true)
+			elif random < 0.85:
 				var brick = _brick.instance()
-				_init_brick(brick, brick.BrickType.GREEN, row, column, true)
+				_init_brick(brick, brick.BrickType.PURPLE, row, column, true)
+			elif random < 0.95:
+				var brick = _brick.instance()
+				_init_brick(brick, brick.BrickType.ORANGE, row, column, true)
 			else:
 				var brick = _brick.instance()
-				_init_brick(brick, brick.BrickType.DARK, row, column, false)
+				_init_brick(brick, brick.BrickType.BLUE, row, column, true)
 
 func _init_brick(brick, brickType, row, column, is_destructible):
 	brick.set_type(brickType)
 	brick.set_is_destructible(is_destructible)
 	
 	add_child(brick)
-	brick.position.x = column * _cell_width
-	brick.position.y = row * _cell_height
+	brick.position.x = column * GameConstants.brick_width
+	brick.position.y = row * GameConstants.brick_height
 	
 	if (is_destructible):
 		_bricks.append(brick)
@@ -47,6 +48,10 @@ func _on_brick_hit(brick):
 	if (brick.is_alive_after_hit() and is_brick_found):
 		_bricks.remove(brick_index)
 	
-	if (_bricks.size == 0):
+	if (_bricks.size() == 0):
 		emit_signal("level_done")
 		
+
+
+func _on_Ball_game_over():
+	pass # Replace with function body.

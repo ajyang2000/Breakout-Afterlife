@@ -11,6 +11,7 @@ var _direction = Vector2(0.5, 1);
 var _is_running = false;
 
 signal brick_hit(brick)
+signal game_over
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("fire"):
@@ -30,7 +31,9 @@ func _physics_process(delta):
 			_direction = _direction.bounce(collision.normal)
 			_direction.x = get_x_bounce_direction(collision)
 		else:
-			_direction = _direction.bounce(collision.normal)
+			var hit_position = collision.position - collision.collider.global_position
+			var normal = _fix_normal(collision.normal, hit_position)
+			_direction = _direction.bounce(normal)
 			
 			if collision.collider.get_meta("Brick"):
 				var brick = collision.collider
@@ -39,10 +42,28 @@ func _physics_process(delta):
 
 func _check_game_over():
 	if not _visibility_notifier.is_on_screen():
-		print("Game over");
-		get_tree().change_scene(_main_scene);
+		emit_signal("game_over")
 
 func get_x_bounce_direction(collision: KinematicCollision2D):
 	var relative_x = collision.position.x - player_container.player.global_position.x
 	var percentage = relative_x / player_container.player_width
 	return percentage - 0.5 * 2 # should be in range [-1, 1]
+
+func _fix_normal(normal, hit_position):
+	if (normal.x == 1 or normal.x == -1 or normal.y == 1 or normal.y == -1):
+		return normal
+	## TODO: Remove magic numbers if have time
+	if (hit_position.x < 2 and hit_position.y < 2):
+		# Upper left corner
+		normal = Vector2(-0.5, -0.5)
+	elif (hit_position.x > GameConstants.brick_width - 2 and hit_position.y < 2):
+		# Upper right corner
+		normal = Vector2(0.5, -0.5)
+	elif (hit_position.x > GameConstants.brick_width - 2 and hit_position.y > GameConstants.brick_height - 2):
+		# Lower right corner
+		normal = Vector2(0.5, 0.5)
+	elif (hit_position.x < 2 and hit_position.y > GameConstants.brick_height - 2):
+		# Lower left corner
+		normal = Vector2(-0.5, 0.5)
+	
+	return normal.normalized()
