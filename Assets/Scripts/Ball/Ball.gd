@@ -14,9 +14,6 @@ signal brick_hit(brick)
 signal game_over
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("action"):
-		_is_running = true;
-	
 	if not _is_running:
 		return
 	
@@ -35,7 +32,7 @@ func _physics_process(delta):
 			var normal = _fix_normal(collision.normal, hit_position)
 			_direction = _direction.bounce(normal)
 			
-			if collision.collider.get_meta("Brick"):
+			if collision.collider.has_meta("Brick"):
 				var brick = collision.collider
 				emit_signal("brick_hit", brick)
 				brick.hit()
@@ -67,3 +64,6 @@ func _fix_normal(normal, hit_position):
 		normal = Vector2(-0.5, 0.5)
 	
 	return normal.normalized()
+
+func _on_action_pressed():
+	_is_running = true;

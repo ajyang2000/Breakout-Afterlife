@@ -12,6 +12,10 @@ onready var _player_map = $PlayerMap
 var _velocity = Vector2.ZERO
 var _y_position = 0
 
+signal control_action
+signal control_back
+signal control_start
+
 func _ready():
 	_build_player(player_length)
 	player_container.player = self
@@ -27,6 +31,12 @@ func _physics_process(delta):
 		
 	move_and_slide(_velocity)
 	_velocity = _velocity.move_toward(Vector2.ZERO, friction)
+	
+	if Input.is_action_just_pressed("action"):
+		emit_signal("control_action")
+	
+	if Input.is_action_just_pressed("start"):
+		emit_signal("control_start")
 
 func _build_player(length):
 	assert(length >= 5, "ERROR: Length must be at least size 5")
