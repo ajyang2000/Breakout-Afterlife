@@ -1,0 +1,50 @@
+Breakout: Afterlife
+
+-- Classic --
+-------------
+
+The player opens the game to find the game title BREAKOUT. ("Afterlife" will be added after classic ends)
+Pressing start opens a small game menu to see start, options, condensed credits, and quit.
+	but it's missing shop and inventory buttons until Afterlife portion.
+Starts out as a simple 2d breakout game.
+The player plays through no more than 3-5 minutes worth of simple gameplay to beat 3 levels.
+There are no powerups, and no special or bonus bricks.
+There will be no music, but the normal SFX will happen.	see NOTE *1*
+Just a simple breakout game where the brick pattern changes each level.
+Upon completion, the player is brought to the credits screen, where a condensed version of the credits will roll up
+	from the bottom of the screen.
+In no more than 8 seconds worth of credits roll, a bold "THE END" will scroll until it finds itself centered
+	on the screen.
+In about 2 more seconds of wait, the player will be prompted to press the ACTION button,
+	which will bring them to the new title of BREAKOUT: AFTERLIFE
+
+
+-- Afterlife --
+---------------
+
+The player passes the new title to return to the game menu again, this time with shop and inventory buttons.
+Immediately a rewards window will overlay the menu to reward the player for beating the classic game.
+	They will get coins and a new paddle and ball.
+The player will then enter the main game, and play through level by level as the difficulty increases.
+Every level beat earns the player a small amount of PERMA tokens, which can be spent on permanent upgrades
+	in the SHOP, then equipped in the INVENTORY. This amount is determined by the Standard Loot Table.
+All bricks loaded in will have a percentage chance of rendering in as a Special or a Bonus brick, 
+	as per the Brick Luck Table.
+Special bricks drop a temporary boost to help the player on their current level as per the Specials Table,
+	Bonus bricks drop tokens and sometimes permanent upgrades.
+The bricks now load in with a set number of HP, and when that number reaches 0 or less, the brick breaks.
+Instead of hearts, the player has a shield on the bottom of the screen with 3 HP. The shield drops at 0 HP,
+	and the next hit to the bottom of the screen causes a game over.
+The ball now has a set amount of POWER, starting with 1, which will remove an equal amount
+	of brick or shield HP on impact.
+Every 3 levels beat, the player encounters a boss battle, consisting of a simple ai paddle, shield, and ball
+	on the opposite side of the screen. The player wins the battle when they have taken out the boss's
+	shield and dealt the final blow. Every successful boss win earns the player
+	a decent amount of PERMA tokens, and a permanent upgrade, as per the Boss Loot Table.
+The player plays the game until they beat all 3 bosses, which will trigger the roll of the full credits.
+
+
+-- NOTES --
+-----------
+
+*1* even simpler SFX here if Cam has time

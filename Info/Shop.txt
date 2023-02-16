@@ -1,0 +1,104 @@
+-- Prices --
+------------
+
+(The value displayed after the item name is the price in PERMA tokens)
+
+Grade 1
+-------
+
+PADDLES
+red paddle: 10
+	slots-1
+	speed-1
+	size-1
+
+green paddle: 15
+	slots-1
+	speed-2
+	size-1
+
+blue paddle: 20
+	slots-1
+	speed-3
+	size-1
+
+BALLS
+red ball: 10
+	power-1
+	speed-1
+	size-1
+
+green ball: 15
+	power-2
+	speed-1
+	size-1
+
+blue ball: 20
+	power-3
+	speed-1
+	size-1
+
+BOOST GEMS
+red gem: 10
+	effect- ball speed -10%
+
+green gem: 15
+	effect- paddle speed +20%
+
+blue gem: 20
+	effect- shield hp +5
+	
+
+
+Grade 2
+-------
+
+PADDLES
+light paddle: 30
+	slots-2
+	speed-2
+	size-2
+
+dark paddle: 40
+	slots-2
+	speed-3
+	size-1
+
+BALLS
+light ball: 30
+	power-4
+	speed-2
+	size-2
+
+dark ball: 40
+	power-5
+	speed-2
+	size-1
+
+BOOST GEMS
+light gem: 30
+	effect- special brick chance +2%
+
+dark gem: 40
+	effect- ball power +3
+
+
+Grade 3
+-------
+
+PADDLES
+neon paddle: 100
+	slots-2
+	speed-2
+	size-2
+
+BALLS
+neon ball: 100
+	power-4
+	speed-2
+	size-2
+
+BOOST GEMS
+neon gem: 100
+	effect- bonus brick chance +1%
+

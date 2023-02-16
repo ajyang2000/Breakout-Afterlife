@@ -1,0 +1,21 @@
+Boss 1
+	ball power: 1
+	paddle + ball speed: 1
+	shield hp: 5
+
+	ai follows own ball, ignores player ball
+
+Boss 2
+	ball power: 3
+	paddle + ball speed: 2
+	shield hp: 10
+
+	ai follows any ball based on closest proximity
+
+Boss 3
+	ball power: 5
+	paddle speed: 3
+	ball speed: 2
+	shield hp: 20
+
+	ai follows any ball based on closest proximity

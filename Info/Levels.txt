@@ -1,0 +1,14 @@
+level 1-3
+	a few large bricks
+	standard brick hp- 1
+
+level 4-6
+	some medium bricks
+	standard brick hp- 2
+	ball speed increases by 5% every minute played, resets at the end of the level or player loses
+	
+level 7-9
+	lots of small bricks thru lvl 9
+	standard brick hp- 3
+	ball speed increases by 5% every 45 seconds played, resets at the end of the level or player loses
+
