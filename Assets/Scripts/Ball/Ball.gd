@@ -14,7 +14,7 @@ signal brick_hit(brick)
 signal game_over
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("fire"):
+	if Input.is_action_just_pressed("action"):
 		_is_running = true;
 	
 	if not _is_running:
