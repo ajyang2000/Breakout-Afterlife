@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+const audio_manager = preload("res://Assets/Prefabs/Audio/AudioManager.tres")
+
 enum BrickType{WHITE, PURPLE,ORANGE, BLUE}
 
 onready var _sprite = $Sprite
@@ -11,6 +13,9 @@ var _is_destructible = true
 func _ready():
 	set_meta("Brick", true)
 	_load_brick(_brickType)
+	
+	audio_manager.instance.attach_sound(audio_manager.SoundType.SFX7)
+	audio_manager.instance.attach_sound(audio_manager.SoundType.SFX8)
 
 func set_type(value):
 	_brickType = value
@@ -28,6 +33,9 @@ func hit():
 	
 	if (_hit_points <= 0):
 		queue_free()
+		audio_manager.instance.play_sound(audio_manager.SoundType.SFX8)
+	else:
+		audio_manager.instance.play_sound(audio_manager.SoundType.SFX7)
 
 func _load_brick(brick_type):
 	match brick_type:
