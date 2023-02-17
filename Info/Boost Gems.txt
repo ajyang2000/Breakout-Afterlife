@@ -1,0 +1,31 @@
+-- BOOST GEMS --
+----------------
+
+Hey there, just a quick note! I just went scrolling through pseudocode and realized that I don't think I ever clearly described
+	 the concept in my mind about the boost gems
+
+Ideally, they would sit at the given (x,y) offset,
+		which I have provided for each gem socket. *1*
+	that makes them appear to be embedded into the visual "slots" of the paddle
+	the transform size/percentage for the gem is parallel with any potential size transformation of the player's currently equipped paddle
+The slots are indicated by the little grey circles on each paddle.
+
+I don't see why not to allow the player to collect up to 3 of each of these gems,
+	as I believe the values that they modify/strengthen are built to handle each of those boosts' cases dynamically
+
+
+I guess the reason I didn't get around to mentioning that was because I never conceptualized the INVENTORY space.
+And to that point, if i came up with a simple, functional pseudo-code concept for the INVENTORY space, 
+	is it realistic to think that we could have that put together by the deadline?
+	Because I can definitely put that concept together on the fly!
+
+
+-- NOTES --
+
+*1* Gem placement offsets, assuming the position of the top left pixel of the player's current paddle sprite is 0, 0:
+	red, green, and blue paddles have 1 gem socket at - (13, 1)
+	light and dark paddles have 2 - (3, 1) and (31, 1)
+	neon has 3 - (5, 4), (21, 5), and (37, 4)
+
+
+	
