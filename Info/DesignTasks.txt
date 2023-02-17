@@ -1,0 +1,24 @@
+-- Design Tasks -- *1*
+------------------
+
+- Compose Afterlife soundtrack
+- Compose Boss Battle soundtrack
+- Compose Menu music (plays in title, menus, inventory, and shop)
+- Compose very simple Clessic soundtrack
+- Create visual sample of inventory
+- Create visual sample of shop
+- Create a simple inventory pseudo
+- Optimize plugged-in SFX
+- Create drop sprites for any newly implemented bonuses
+- Create drop sprites for any remaining specials we decide to use
+- Create VFX for any newly implemented specials
+- Create animations for light, dark, and neon paddles
+- Create shiny animation for special and bonus bricks
+- Create particles to be tossed around as the ball collides with stuff
+- Add any polishing VFX
+
+-- NOTES --
+-----------
+
+*1* the tasks are in order from high priority to low.
+	If you think any task is missing, feel free to add it in with a '+'
