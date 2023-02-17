@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/UI/TitleFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/UI/MainTheme.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/Scripts/Menus/TitleMenu.gd" type="Script" id=3]
+
+[node name="TitleMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 382.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "Breakout: Afterlife"
+align = 1
+valign = 1
+
+[node name="Start" type="Label" parent="VBoxContainer"]
+margin_top = 386.0
+margin_right = 1024.0
+margin_bottom = 768.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+text = "Press -start- or -enter-"
+align = 1
+valign = 1

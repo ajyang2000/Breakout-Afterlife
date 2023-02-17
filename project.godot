@@ -14,11 +14,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Assets/Scripts/Audio/AudioManager.gd"
 }, {
-"base": "Resource",
-"class": "GameConstants",
-"language": "GDScript",
-"path": "res://Assets/Scripts/GameConstants.gd"
-}, {
 "base": "",
 "class": "GitAPI",
 "language": "NativeScript",
@@ -31,7 +26,6 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "AudioManager": "",
-"GameConstants": "",
 "GitAPI": "",
 "PlayerContainer": ""
 }
@@ -39,8 +33,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Breakout: Afterlife"
-run/main_scene="res://Scenes/Menus/MainMenu.tscn"
+run/main_scene="res://Scenes/Menus/TitleMenu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+SceneTransition="*res://Scenes/SceneTransition.tscn"
+GameUtility="*res://Assets/Scripts/GameUtility.gd"
 
 [debug]
 
@@ -49,6 +48,7 @@ settings/fps/force_fps=60
 [display]
 
 window/size/height=768
+window/dpi/allow_hidpi=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
