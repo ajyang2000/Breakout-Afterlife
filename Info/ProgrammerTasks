@@ -1,0 +1,28 @@
+-- Programming Tasks -- *1*
+-----------------------
+
+- Integrate new assets and game layout
+- Build Classic Levels
+- Create a settings file for the level of difficulty for the first three stages in afterlife
+- Add adjustable settings to the paddle
+- Add adjustable settings to the ball
+- Add logic for types of brick (leave special and bonus as normal for now)
+- Add shield + mechanics
+- Update death and game over scenes (I think it is broken now)
+- Create first AI boss
+- Create AI boss level
+- Add the other stages' settings
+- Add special
+- Add bonus
+- Integrate other paddles, balls and gems
+- Make other paddles, balls and gems as loot 
+- Create simple inventory
+- Create simple shop and coins
+- Beautify shop
+- Beautify inventory
+
+-- NOTES --
+-----------
+
+*1* the tasks are order from high priority to low. It may seem a lot but I simplified them so it easier for tracking progress.
+	If you think any task is missing, feel free to add it in with a '+'
