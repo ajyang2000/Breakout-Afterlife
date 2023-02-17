@@ -18,3 +18,5 @@ func _ready():
 func _start_game():
 	SceneTransition.change_scene(_main_scene)
 
+func _quit_game():
+	get_tree().quit()

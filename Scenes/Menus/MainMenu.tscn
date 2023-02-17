@@ -131,6 +131,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 1 )
-text = "Credits"
+text = "Quit"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Start/StartButton" to="." method="_start_game"]
