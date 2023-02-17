@@ -13,7 +13,7 @@
 [node name="DynamicLevel" parent="." instance=ExtResource( 4 )]
 position = Vector2( 32, 32 )
 rows = 4
-columns = 24
+columns = 20
 difficulty = 3
 
 [node name="Player" parent="." instance=ExtResource( 1 )]

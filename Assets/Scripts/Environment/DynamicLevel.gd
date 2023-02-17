@@ -20,24 +20,24 @@ func _ready():
 				pass
 			elif random < 0.7:
 				var brick = _brick.instance()
-				_init_brick(brick, brick.BrickType.WHITE, row, column, true)
+				_init_brick(brick, brick.BrickType.NORMAL, row, column, true)
 			elif random < 0.85:
 				var brick = _brick.instance()
-				_init_brick(brick, brick.BrickType.PURPLE, row, column, true)
+				_init_brick(brick, brick.BrickType.BONUS, row, column, true)
 			elif random < 0.95:
 				var brick = _brick.instance()
-				_init_brick(brick, brick.BrickType.ORANGE, row, column, true)
+				_init_brick(brick, brick.BrickType.SPECIAL, row, column, true)
 			else:
 				var brick = _brick.instance()
-				_init_brick(brick, brick.BrickType.BLUE, row, column, true)
+				_init_brick(brick, brick.BrickType.STRONG, row, column, true)
 
 func _init_brick(brick, brickType, row, column, is_destructible):
 	brick.set_type(brickType)
 	brick.set_is_destructible(is_destructible)
 	
 	add_child(brick)
-	brick.position.x = column * GameConstants.brick_width
-	brick.position.y = row * GameConstants.brick_height
+	brick.position.x = column * GameUtility.brick_width
+	brick.position.y = row * GameUtility.brick_height
 	
 	if (is_destructible):
 		_bricks.append(brick)

@@ -1,14 +1,25 @@
 extends StaticBody2D
 
 const audio_manager = preload("res://Assets/Prefabs/Audio/AudioManager.tres")
-
-enum BrickType{WHITE, PURPLE,ORANGE, BLUE}
+const _brick_normal = "res://Assets/Sprites/brick_normal.png"
+const _brick_bonus = "res://Assets/Sprites/brick_bonus.png"
+const _brick_special = "res://Assets/Sprites/brick_special.png"
+const _brick_strong = "res://Assets/Sprites/brick_strong.png"
+	
+enum BrickType{
+	NORMAL, 
+	BONUS,
+	SPECIAL, 
+	STRONG
+}
 
 onready var _sprite = $Sprite
 
 var _hit_points
-var _brickType = BrickType.WHITE
+var _brickType = BrickType.NORMAL
 var _is_destructible = true
+
+var _brick_dict = {}
 
 func _ready():
 	set_meta("Brick", true)
@@ -37,17 +48,14 @@ func hit():
 	else:
 		audio_manager.instance.play_sound(audio_manager.SoundType.SFX7)
 
-func _load_brick(brick_type):
+func _load_brick(brick_type, hit_points: int = 1):
 	match brick_type:
-		BrickType.WHITE:
-			_sprite.region_rect = Rect2(320, 0, 160, 80)
-			_hit_points = 1
-		BrickType.PURPLE:
-			_sprite.region_rect = Rect2(480, 0, 160, 80)
-			_hit_points = 1
-		BrickType.ORANGE:
-			_sprite.region_rect = Rect2(320, 80, 160, 80)
-			_hit_points = 1
-		BrickType.BLUE:
-			_sprite.region_rect = Rect2(480, 80, 160, 80)
-			_hit_points = 1
+		BrickType.NORMAL:
+			_sprite.texture = load(_brick_normal)
+		BrickType.STRONG:
+			_sprite.texture = load(_brick_strong)
+		BrickType.SPECIAL:
+			_sprite.texture = load(_brick_special)
+		BrickType.BONUS:
+			_sprite.texture = load(_brick_bonus)
+	_hit_points = hit_points

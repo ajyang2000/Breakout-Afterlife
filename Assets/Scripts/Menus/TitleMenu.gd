@@ -10,5 +10,5 @@ func _ready():
 	visible = true
 
 func _process(delta):
-	if (Input.is_action_pressed("action")):
-		change_scene(main_menu_scene)
+	if (Input.is_action_just_pressed("start")):
+		change_scene(SceneTransition.main_menu_scene)

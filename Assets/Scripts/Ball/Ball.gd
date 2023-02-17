@@ -53,13 +53,13 @@ func _fix_normal(normal, hit_position):
 	if (hit_position.x < 2 and hit_position.y < 2):
 		# Upper left corner
 		normal = Vector2(-0.5, -0.5)
-	elif (hit_position.x > GameConstants.brick_width - 2 and hit_position.y < 2):
+	elif (hit_position.x > GameUtility.brick_width - 2 and hit_position.y < 2):
 		# Upper right corner
 		normal = Vector2(0.5, -0.5)
-	elif (hit_position.x > GameConstants.brick_width - 2 and hit_position.y > GameConstants.brick_height - 2):
+	elif (hit_position.x > GameUtility.brick_width - 2 and hit_position.y > GameUtility.brick_height - 2):
 		# Lower right corner
 		normal = Vector2(0.5, 0.5)
-	elif (hit_position.x < 2 and hit_position.y > GameConstants.brick_height - 2):
+	elif (hit_position.x < 2 and hit_position.y > GameUtility.brick_height - 2):
 		# Lower left corner
 		normal = Vector2(-0.5, 0.5)
 	
