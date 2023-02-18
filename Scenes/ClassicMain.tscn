@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Menus/GameOverMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Prefabs/Player/Paddle.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Prefabs/Ball/Ball.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Prefabs/Ball/ClassicBall.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Menus/PauseMenu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Menus/LevelDoneMenu.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Tileset/WallTileset.tres" type="TileSet" id=6]
@@ -23,12 +23,13 @@ tile_data = PoolIntArray( -65536, 4, 0, -65535, 4, 0, -65534, 4, 0, -65533, 4, 0
 script = ExtResource( 7 )
 
 [node name="Paddle" parent="." instance=ExtResource( 2 )]
-position = Vector2( 528, 728 )
+position = Vector2( 464, 728 )
 
-[node name="Ball" parent="." instance=ExtResource( 3 )]
-position = Vector2( 499, 703 )
+[node name="ClassicBall" parent="." instance=ExtResource( 3 )]
+position = Vector2( 512, 703 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="HUD" parent="GUI" instance=ExtResource( 8 )]
 
@@ -39,10 +40,10 @@ visible = false
 
 [node name="PauseMenu" parent="GUI" instance=ExtResource( 4 )]
 
-[connection signal="level_done" from="LevelLoader" to="Ball" method="_on_level_done"]
 [connection signal="level_done" from="LevelLoader" to="GUI/LevelDoneMenu" method="_on_level_done"]
-[connection signal="control_action" from="Paddle" to="Ball" method="_on_action_pressed"]
+[connection signal="level_done" from="LevelLoader" to="ClassicBall" method="_on_level_done"]
+[connection signal="control_action" from="Paddle" to="ClassicBall" method="_on_action_pressed"]
 [connection signal="control_start" from="Paddle" to="GUI/PauseMenu" method="_on_paused_pressed"]
-[connection signal="brick_hit" from="Ball" to="LevelLoader" method="_on_brick_hit"]
-[connection signal="brick_lost" from="Ball" to="GUI/HUD" method="_on_ball_lost"]
-[connection signal="game_over" from="Ball" to="GUI/GameOverMenu" method="_on_game_over"]
+[connection signal="brick_hit" from="ClassicBall" to="LevelLoader" method="_on_brick_hit"]
+[connection signal="brick_lost" from="ClassicBall" to="GUI/HUD" method="_on_ball_lost"]
+[connection signal="game_over" from="ClassicBall" to="GUI/GameOverMenu" method="_on_game_over"]
