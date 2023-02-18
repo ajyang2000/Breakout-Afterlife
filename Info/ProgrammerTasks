@@ -2,11 +2,8 @@
 -----------------------
 
 - Integrate new assets and game layout
-- Build Classic Levels [COMPLETE]
 - Create a settings file for the level of difficulty for the first three stages in afterlife
-+ Add HP with shields
-- Add adjustable settings to the paddle
-- Add adjustable settings to the ball
+- Add HP with shields
 - Add logic for types of brick (leave special and bonus as normal for now)
 - Add shield + mechanics
 - Update death and game over scenes (I think it is broken now)
@@ -15,12 +12,16 @@
 - Add the other stages' settings
 - Add special
 - Add bonus
++ Add gems logic
 - Integrate other paddles, balls and gems
 - Make other paddles, balls and gems as loot 
 - Create simple inventory
 - Create simple shop and coins
 - Beautify shop
 - Beautify inventory
+- Build Classic Levels [COMPLETE]
+- Add adjustable settings to the paddle [COMPLETE]
+- Add adjustable settings to the ball [COMPLETE]
 
 -- NOTES --
 -----------

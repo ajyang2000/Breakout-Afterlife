@@ -88,9 +88,9 @@ Grade 3
 
 PADDLES
 neon paddle: 100
-	slots-2
-	speed-2
-	size-2
+	slots-3
+	speed-3
+	size-3
 
 BALLS
 neon ball: 100
