@@ -24,13 +24,6 @@ func _ready():
 	ball.connect("brick_hit", self, "_on_brick_hit")
 	ball.connect("ball_lost", self, "_on_ball_lost")
 	ball.connect("game_over", self, "_on_game_over")
-
-func _physics_process(delta):
-	if Input.is_action_just_pressed("action"):
-		emit_signal("control_action")
-	
-	if Input.is_action_just_pressed("start"):
-		emit_signal("control_start")
 		
 func _on_brick_hit(brick):
 	emit_signal("brick_hit", brick)

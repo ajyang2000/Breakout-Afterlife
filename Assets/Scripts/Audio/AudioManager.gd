@@ -45,3 +45,9 @@ func attach_sound(type):
 func play_sound(type, offset = 0):
 	if type in _sfx_dict.keys():
 		_sfx_dict[type][audio_player_index].play(offset)
+
+func get_player(type) -> AudioStreamPlayer:
+	if type in _sfx_dict.keys():
+		return _sfx_dict[type][audio_player_index]
+	
+	return null

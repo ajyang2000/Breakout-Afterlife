@@ -43,8 +43,8 @@ visible = false
 [node name="PauseMenu" parent="GUI" instance=ExtResource( 4 )]
 visible = false
 
-[connection signal="level_done" from="LevelLoader" to="GUI/LevelDoneMenu" method="_on_level_done"]
 [connection signal="level_done" from="LevelLoader" to="BallSelector" method="_on_level_done"]
+[connection signal="level_done" from="LevelLoader" to="GUI/LevelDoneMenu" method="_on_level_done"]
 [connection signal="ball_lost" from="BallSelector" to="GUI/HUD" method="_on_ball_lost"]
 [connection signal="brick_hit" from="BallSelector" to="LevelLoader" method="_on_brick_hit"]
 [connection signal="game_over" from="BallSelector" to="GUI/GameOverMenu" method="_on_game_over"]

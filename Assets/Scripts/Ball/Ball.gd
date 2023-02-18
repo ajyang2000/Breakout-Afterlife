@@ -42,6 +42,9 @@ func _physics_process(delta):
 				var brick = collision.collider
 				emit_signal("brick_hit", brick)
 				brick.hit(power)
+			elif collision.collider.has_meta("Shield"):
+				var shield = collision.collider
+				shield.hit(power)
 
 func _check_ball_lost():
 	if not _visibility_notifier.is_on_screen():
