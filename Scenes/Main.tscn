@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Assets/Prefabs/Player/Paddle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Prefabs/Paddle/Paddle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tileset/WallTileset.tres" type="TileSet" id=2]
 [ext_resource path="res://Assets/Prefabs/Ball/Ball.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Levels/DynamicLevel.tscn" type="PackedScene" id=4]

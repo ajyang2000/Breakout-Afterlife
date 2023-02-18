@@ -38,10 +38,10 @@ func set_is_destructible(value):
 func is_alive_after_hit():
 	return _hit_points > 1
 
-func hit():
+func hit(power: int):
 	if (not _is_destructible):
 		return
-	_hit_points -= 1
+	_hit_points -= power
 	
 	if (_hit_points <= 0):
 		queue_free()

@@ -1,6 +1,9 @@
 extends KinematicBody2D
 
-export var speed = 500;
+const speed_multiplier = 500;
+
+export var power = 1
+export var speed = 1
 
 onready var _visibility_notifier = $VisibilityNotifier;
 
@@ -23,7 +26,7 @@ func _physics_process(delta):
 		return
 	
 	_direction = _direction.normalized()
-	var velocity = speed * _direction * delta;
+	var velocity = speed * _direction * delta * speed_multiplier;
 	var collision = move_and_collide(velocity);
 	
 	if (collision != null):
@@ -32,7 +35,7 @@ func _physics_process(delta):
 			_direction.x = get_x_bounce_direction(collision)
 		else:
 			var hit_position = collision.position - collision.collider.global_position
-			#var normal = _fix_normal(collision.normal, hit_position)
+			var normal = _fix_normal(collision.normal, hit_position)
 			_direction = _direction.bounce(collision.normal)
 			
 			if collision.collider.has_meta("Brick"):
