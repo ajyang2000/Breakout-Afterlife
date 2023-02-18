@@ -5,8 +5,8 @@ onready var inventory = $MarginContainer/VBoxContainer/VBoxContainer/Inventory
 onready var shop = $MarginContainer/VBoxContainer/VBoxContainer/Shop
 
 func _ready():
-	title_text.text = GameUtility.get_title()
-	if (GameUtility.is_afterlife):
+	title_text.text = GameManager.get_title()
+	if (GameManager.is_afterlife):
 		inventory.visible = true
 		shop.visible = true
 	else:
@@ -14,7 +14,10 @@ func _ready():
 		shop.visible = false
 
 func _start_game():
-	SceneTransition.change_scene(SceneTransition.main_game_scene)
+	if (GameManager.is_afterlife):
+		SceneTransition.change_scene(SceneTransition.main_game_scene)
+	else:
+		SceneTransition.change_scene(SceneTransition.classic_game_scene)
 
 func _go_to_credits():
 	SceneTransition.change_scene(SceneTransition.credits_scene)

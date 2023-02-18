@@ -21,6 +21,9 @@ func _on_ResumeButton_pressed():
 func _on_QuitButton_pressed():
 	get_tree().quit()
 
+func _on_MainMenuButton_pressed():
+	SceneTransition.change_scene(SceneTransition.main_menu_scene)
 
 func _on_paused_pressed():
 	set_is_paused(!_is_paused)
+

@@ -15,7 +15,7 @@ var _is_hint_shown = false
 
 func _ready():
 	visible = true
-	_full_credits.visible = GameUtility.is_afterlife
+	_full_credits.visible = GameManager.is_afterlife
 	_end_hint.visible = false
 
 func _physics_process(delta):
@@ -25,7 +25,7 @@ func _physics_process(delta):
 			if SceneTransition.previous_scene == SceneTransition.main_menu_scene:
 				change_scene(SceneTransition.main_menu_scene)
 			else:
-				GameUtility.is_afterlife = true
+				GameManager.is_afterlife = true
 				change_scene(SceneTransition.title_scene)
 		
 		if _time_elapsed > action_delay_time and not _is_hint_shown:

@@ -1,6 +1,4 @@
-extends Resource
-
-class_name AudioManager
+extends Node
 
 const audio_player_index = 0
 const file_path_index = 1
@@ -18,25 +16,11 @@ enum SoundType{
 	SFX9
 }
 
-var instance = null setget , _get_instance
-var node = null setget _set_node
-
 var _sfx_dict = {}
 var _attached_sfx = []
 
-func _get_instance():
-	if instance == null:
-		instance = self
-		instance.initialize()
-	
-	return instance
-
-func _set_node(value):
-	node = value
-	_attached_sfx.clear()
-	if instance == null:
-		instance = self
-		instance.initialize()
+func _ready():
+	initialize()
 	
 func initialize():
 	_sfx_dict[SoundType.SFX0] = [AudioStreamPlayer.new(), "res://Assets/SFX/sfx0.wav"]
@@ -54,7 +38,7 @@ func attach_sound(type):
 	if type in _sfx_dict.keys() and not type in _attached_sfx:
 		var audio_player = _sfx_dict[type][audio_player_index]
 		var file_path = _sfx_dict[type][file_path_index]
-		node.add_child(audio_player)
+		add_child(audio_player)
 		audio_player.set_stream(load(file_path))
 		_attached_sfx.append(type)
 

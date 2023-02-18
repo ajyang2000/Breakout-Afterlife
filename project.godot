@@ -9,25 +9,13 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Resource",
-"class": "AudioManager",
-"language": "GDScript",
-"path": "res://Assets/Scripts/Audio/AudioManager.gd"
-}, {
 "base": "",
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://addons/godot-git-plugin/git_api.gdns"
-}, {
-"base": "Resource",
-"class": "PlayerContainer",
-"language": "GDScript",
-"path": "res://Assets/Scripts/Player/PlayerContainer.gd"
 } ]
 _global_script_class_icons={
-"AudioManager": "",
-"GitAPI": "",
-"PlayerContainer": ""
+"GitAPI": ""
 }
 
 [application]
@@ -39,7 +27,9 @@ config/icon="res://icon.png"
 [autoload]
 
 SceneTransition="*res://Scenes/SceneTransition.tscn"
-GameUtility="*res://Assets/Scripts/GameUtility.gd"
+GameManager="*res://Assets/Scripts/GameManager.gd"
+AudioManager="*res://Assets/Scripts/Audio/AudioManager.gd"
+PlayerData="*res://Assets/Scripts/Player/PlayerData.gd"
 
 [debug]
 

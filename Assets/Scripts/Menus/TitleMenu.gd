@@ -6,7 +6,7 @@ const special_title = "Breakout: Afterlife"
 onready var _title_text = $VBoxContainer/Title
 
 func _ready():
-	_title_text.text = GameUtility.get_title()
+	_title_text.text = GameManager.get_title()
 	visible = true
 
 func _process(delta):

@@ -1,6 +1,6 @@
 extends Node
 
-const _brick = preload("res://Assets/Prefabs/Environment/Brick.tscn")
+const _brick = preload("res://Assets/Prefabs/Environment/Bricks/Brick.tscn")
 
 export var rows = 3
 export var columns = 10
@@ -36,8 +36,8 @@ func _init_brick(brick, brickType, row, column, is_destructible):
 	brick.set_is_destructible(is_destructible)
 	
 	add_child(brick)
-	brick.position.x = column * GameUtility.brick_width
-	brick.position.y = row * GameUtility.brick_height
+	brick.position.x = column * GameManager.brick_width
+	brick.position.y = row * GameManager.brick_height
 	
 	if (is_destructible):
 		_bricks.append(brick)
@@ -50,8 +50,3 @@ func _on_brick_hit(brick):
 	
 	if (_bricks.size() == 0):
 		emit_signal("level_done")
-		
-
-
-func _on_Ball_game_over():
-	pass # Replace with function body.

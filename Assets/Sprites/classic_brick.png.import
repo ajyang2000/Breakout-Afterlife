@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wall_blue.png-fb496475b31cc73328bbc96f22388c79.stex"
+path="res://.import/classic_brick.png-936f6f4819e9d91063635c8b05078a3e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/wall_blue.png"
-dest_files=[ "res://.import/wall_blue.png-fb496475b31cc73328bbc96f22388c79.stex" ]
+source_file="res://Assets/Sprites/classic_brick.png"
+dest_files=[ "res://.import/classic_brick.png-936f6f4819e9d91063635c8b05078a3e.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

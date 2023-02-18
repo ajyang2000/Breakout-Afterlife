@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wall_gray.png-59cd0deb9fba2c635bd03099a57e2082.stex"
+path="res://.import/hp_full.png-65b8d2334a2a706141af26e74cefda1f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/wall_gray.png"
-dest_files=[ "res://.import/wall_gray.png-59cd0deb9fba2c635bd03099a57e2082.stex" ]
+source_file="res://Assets/hp_full.png"
+dest_files=[ "res://.import/hp_full.png-65b8d2334a2a706141af26e74cefda1f.stex" ]
 
 [params]
 
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

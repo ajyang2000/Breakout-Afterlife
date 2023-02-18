@@ -2,8 +2,9 @@
 -----------------------
 
 - Integrate new assets and game layout
-- Build Classic Levels
+- Build Classic Levels [COMPLETE]
 - Create a settings file for the level of difficulty for the first three stages in afterlife
++ Add HP with shields
 - Add adjustable settings to the paddle
 - Add adjustable settings to the ball
 - Add logic for types of brick (leave special and bonus as normal for now)
