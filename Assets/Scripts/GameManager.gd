@@ -2,8 +2,8 @@ extends Node
 
 const simple_title = "Breakout"
 const special_title = "Breakout: Afterlife"
-const brick_width = 48
-const brick_height = 24
+const brick_width = 56
+const brick_height = 32
 const classic_level_threshold = 3
 const afterlife_level_threshold = 3
 const defeated_boss_threshold = 1
@@ -29,7 +29,7 @@ func level_won():
 	else:
 		if (level > classic_level_threshold):
 			SceneTransition.change_scene(SceneTransition.credits_scene)
-			level = 0
+			level = 1
 		else:
 			SceneTransition.change_scene(SceneTransition.classic_game_scene)
 		

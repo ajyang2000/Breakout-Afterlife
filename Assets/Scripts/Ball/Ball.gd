@@ -13,7 +13,7 @@ var _is_game_over = false;
 var _initial_position: Vector2
 
 signal brick_hit(brick)
-signal brick_lost
+signal ball_lost
 signal game_over
 
 func _ready():
@@ -41,12 +41,12 @@ func _physics_process(delta):
 			if collision.collider.has_meta("Brick"):
 				var brick = collision.collider
 				emit_signal("brick_hit", brick)
-				brick.hit()
+				brick.hit(power)
 
 func _check_ball_lost():
 	if not _visibility_notifier.is_on_screen():
 		if _is_running:
-			emit_signal("brick_lost")
+			emit_signal("ball_lost")
 			PlayerData.player_health -= 1
 			
 			if (PlayerData.player_health == 0):
@@ -80,10 +80,10 @@ func _fix_normal(normal, hit_position):
 	
 	return normal.normalized()
 
-func _on_action_pressed():
+func on_action_pressed():
 	if not _is_game_over:
 		_is_running = true;
 
-func _on_level_done():
-	_is_running = true
+func on_level_done():
+	_is_running = false
 	_is_game_over = true

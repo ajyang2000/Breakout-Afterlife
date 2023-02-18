@@ -6,7 +6,6 @@
 - Add HP with shields
 - Add logic for types of brick (leave special and bonus as normal for now)
 - Add shield + mechanics
-- Update death and game over scenes (I think it is broken now)
 - Create first AI boss
 - Create AI boss level
 - Add the other stages' settings
@@ -22,6 +21,7 @@
 - Build Classic Levels [COMPLETE]
 - Add adjustable settings to the paddle [COMPLETE]
 - Add adjustable settings to the ball [COMPLETE]
+- Update death and game over scenes (I think it is broken now) [COMPLETE]
 
 -- NOTES --
 -----------

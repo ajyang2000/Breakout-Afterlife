@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Prefabs/Paddle/Paddle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Sprites/paddle_blue.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 22.0
+height = 144.0
 
 [node name="BluePaddle" instance=ExtResource( 1 )]
 slots = 1
@@ -12,3 +16,4 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2( 48, 12 )
+shape = SubResource( 1 )

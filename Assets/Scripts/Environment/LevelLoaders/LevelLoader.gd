@@ -11,8 +11,11 @@ func _ready():
 	_loaded_level = load(_levels[index]).instance()
 	add_child(_loaded_level)
 
+func _physics_process(delta):
+	if Input.is_action_just_pressed("debug_next_level"):
+		emit_signal("level_done")
+
 func _on_brick_hit(_brick):
-	print(_loaded_level.get_child_count())
 	if (_loaded_level.get_child_count() <= 1):
 		emit_signal("level_done")
 
