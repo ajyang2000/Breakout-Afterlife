@@ -56,25 +56,23 @@ valign = 1
 [node name="FullCredits" type="Label" parent="VBoxContainer"]
 margin_top = 876.0
 margin_right = 1024.0
-margin_bottom = 1689.0
+margin_bottom = 1644.0
 rect_min_size = Vector2( 1024, 768 )
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 3 )
 text = "Creative Director - Cameron Smith
-Programming - Alexander Yang
 
-Graphics + Audio - Cameron Smith using PICO-8 and Aseprite
-Player Controls, Level Generation, Mechanics - Alexander Yang
-Shop Concept Design - Alexander Johnson
+Graphics - Cameron Smith
 
-Playtesting - see NOTES *9* and *10*
-	?Adrian Santiago
-	?Alexander Johnson
-	?Caleb Smith
-	?Cash Smith
-	?Lindsey Aldrich
-	?Paige Sutton
-	?Natalie Avila
+Audio - Cameron Smith 
+
+Player Controls - Alexander Yang
+
+Level Generation - Alexander Yang
+
+Mechanics - Alexander Yang
+
+Concept Design Help - Alexander Johnson
 
 Color Palette - Endesga 32 palette by ENDESGA, lospec.com
 
@@ -82,15 +80,14 @@ Special thanks to YOU
 for taking the time to enjoy our game!
 
 Please take a moment to tell us your
-thoughts on our itch.io page @
-	-itch.io/projectgoeshere-"
+thoughts on our itch.io page :)"
 align = 1
 valign = 1
 
 [node name="End" type="Label" parent="VBoxContainer"]
-margin_top = 1693.0
+margin_top = 1648.0
 margin_right = 1024.0
-margin_bottom = 2461.0
+margin_bottom = 2416.0
 rect_min_size = Vector2( 1024, 768 )
 size_flags_vertical = 1
 theme = ExtResource( 2 )

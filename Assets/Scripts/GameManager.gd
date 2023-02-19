@@ -25,6 +25,7 @@ func get_title() -> String:
 	
 func set_afterlife(value):
 	is_afterlife = value
+	print(value)
 	SaveManager.data.is_afterlife = value
 	
 func get_afterlife():

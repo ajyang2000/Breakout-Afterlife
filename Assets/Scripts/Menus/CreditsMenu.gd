@@ -5,7 +5,7 @@ onready var _end_credits = $VBoxContainer/End
 onready var _full_credits = $VBoxContainer/FullCredits
 onready var _end_hint = $VBoxContainer/End/EndHint
 
-export var speed = 250
+export var speed = 200
 export var delay_time = 1
 export var action_delay_time = 2
 
