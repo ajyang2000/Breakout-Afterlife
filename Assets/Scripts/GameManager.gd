@@ -8,7 +8,7 @@ const classic_level_threshold = 3
 const afterlife_level_threshold = 3
 const defeated_boss_threshold = 1
 
-var is_afterlife = false
+var is_afterlife = true
 var level : int = 1 setget , get_level
 var boss_defeated_count = 0
 

@@ -1,12 +1,6 @@
 extends Node2D
 
-const red_ball = "res://Assets/Prefabs/Ball/RedBall.tscn"
-const blue_ball = "res://Assets/Prefabs/Ball/BlueBall.tscn"
-const dark_ball = "res://Assets/Prefabs/Ball/DarkBall.tscn"
-const green_ball = "res://Assets/Prefabs/Ball/GreenBall.tscn"
-const light_ball = "res://Assets/Prefabs/Ball/LightBall.tscn"
-const neon_ball = "res://Assets/Prefabs/Ball/NeonBall.tscn"
-const classic_ball = "res://Assets/Prefabs/Ball/ClassicBall.tscn"
+const inventory = preload("res://Assets/Configs/Inventory.tres")
 
 signal brick_hit(brick)
 signal ball_lost
@@ -17,9 +11,9 @@ var ball
 
 func _ready():
 	if (GameManager.is_afterlife):
-		ball = load(red_ball).instance()
+		ball = load(inventory.get_current_ball()).instance()
 	else:
-		ball = load(classic_ball).instance()
+		ball = load(inventory.classic_ball).instance()
 
 	add_child(ball)
 	ball.connect("brick_hit", self, "_on_brick_hit")
