@@ -16,7 +16,7 @@ enum BrickType{
 
 onready var _sprite = $Sprite
 
-var _hit_points
+var _hit_points = 1
 export var _brickType = BrickType.CLASSIC
 var _is_destructible = true
 var _brick_dict = {}
@@ -52,7 +52,7 @@ func set_hit_points(value):
 func is_alive_after_hit(power):
 	return _hit_points - power > 0
 
-func hit(power: int):
+func hit(power: int = 1):
 	if (not _is_destructible):
 		return
 	_hit_points -= power

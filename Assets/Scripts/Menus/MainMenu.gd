@@ -1,15 +1,10 @@
 extends Node2D
 
 onready var title_text = $MarginContainer/VBoxContainer/Title
-onready var inventory = $MarginContainer/VBoxContainer/VBoxContainer/Inventory
 onready var start_button = $MarginContainer/VBoxContainer/VBoxContainer/Start/StartButton
 
 func _ready():
 	title_text.text = GameManager.get_title()
-	if (GameManager.is_afterlife):
-		inventory.visible = true
-	else:
-		inventory.visible = false
 	GameManager.reset_progress()
 	start_button.grab_focus()
 	

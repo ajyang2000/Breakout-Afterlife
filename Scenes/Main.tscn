@@ -50,7 +50,6 @@ visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
-volume_db = -20.0
 autoplay = true
 
 [connection signal="ball_lost" from="BallSelector" to="Shield" method="_on_ball_lost"]
