@@ -10,7 +10,7 @@ const defeated_boss_threshold = 1
 
 var is_afterlife = false
 var level : int = 1 setget , get_level
-var _boss_defeated_count = 0
+var boss_defeated_count = 0
 
 var enemy_paddle = null
 var enemy_ball = null
@@ -30,8 +30,8 @@ func level_lost():
 func level_won():
 	if get_tree().current_scene.filename == SceneTransition.boss_game_scene:
 		# boss defeated
-		_boss_defeated_count += 1
-		if (_boss_defeated_count >= defeated_boss_threshold):
+		boss_defeated_count += 1
+		if (boss_defeated_count >= defeated_boss_threshold):
 			SceneTransition.change_scene(SceneTransition.credits_scene)
 		else:
 			level += 1
@@ -55,4 +55,4 @@ func level_won():
 
 func reset_progress():
 	level = 1
-	_boss_defeated_count = 0
+	boss_defeated_count = 0

@@ -32,3 +32,13 @@ const boss_level_difficulty = {
 	'2': [4, 15, 0.1],
 	'3': [5, 15, 0.1]
 }
+
+#[0] = ball power 
+#[1] = paddle speed
+#[2] = ball speed
+#[3] = shield hp
+const boss_settings = {
+	'1': [1, 1, 1, 5],
+	'2': [3, 2, 2, 10],
+	'3': [5, 3, 2, 20]
+}

@@ -37,7 +37,7 @@ func _physics_process(delta):
 			_direction.x = get_x_bounce_direction(collision)
 		elif GameManager.enemy_paddle == collision.collider:
 			_direction = _direction.bounce(collision.normal)
-			_direction.x = get_x_bounce_direction(collision)
+			_direction.x = -get_x_bounce_direction(collision)
 		else:
 			var hit_position = collision.position - collision.collider.global_position
 			var normal = _fix_normal(collision.normal, hit_position)

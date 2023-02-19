@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Prefabs/Environment/Shield.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Main.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Prefabs/Paddle/DarkPaddle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Scripts/Enemy.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Prefabs/Ball/DarkBall.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Scripts/Paddle/EnemyPaddle.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Scripts/Ball/EnemyBall.gd" type="Script" id=7]
@@ -18,25 +19,26 @@ is_boss_level = true
 
 [node name="EnemyNode" type="Node2D" parent="." index="5"]
 rotation = 3.14159
+script = ExtResource( 4 )
 
-[node name="DarkBall" parent="EnemyNode" index="0" instance=ExtResource( 5 )]
+[node name="EnemyBall" parent="EnemyNode" index="0" instance=ExtResource( 5 )]
 position = Vector2( -512, -120 )
 script = ExtResource( 7 )
 
 [node name="EnemyShield" parent="EnemyNode" index="1" instance=ExtResource( 1 )]
 position = Vector2( -912, -47.9999 )
 
-[node name="DarkPaddle" parent="EnemyNode" index="2" instance=ExtResource( 3 )]
+[node name="EnemyPaddle" parent="EnemyNode" index="2" instance=ExtResource( 3 )]
 position = Vector2( -576, -95.9999 )
 script = ExtResource( 6 )
 slots = 0
 speed = 1
 
 [connection signal="boss_defeated" from="BallSelector" to="GUI/LevelDoneMenu" method="_on_level_done"]
-[connection signal="control_action" from="PaddleSelector" to="EnemyNode/DarkBall" method="on_action_pressed"]
-[connection signal="level_done" from="DynamicLevel" to="EnemyNode/DarkBall" method="on_level_done"]
-[connection signal="ball_lost" from="EnemyNode/DarkBall" to="Shield" method="_on_ball_lost"]
-[connection signal="ball_lost" from="EnemyNode/DarkBall" to="GUI/HUD" method="_on_ball_lost"]
-[connection signal="boss_defeated" from="EnemyNode/DarkBall" to="GUI/LevelDoneMenu" method="_on_level_done"]
-[connection signal="brick_hit" from="EnemyNode/DarkBall" to="DynamicLevel" method="_on_brick_hit"]
-[connection signal="game_over" from="EnemyNode/DarkBall" to="GUI/GameOverMenu" method="_on_game_over"]
+[connection signal="control_action" from="PaddleSelector" to="EnemyNode/EnemyBall" method="on_action_pressed"]
+[connection signal="level_done" from="DynamicLevel" to="EnemyNode/EnemyBall" method="on_level_done"]
+[connection signal="ball_lost" from="EnemyNode/EnemyBall" to="Shield" method="_on_ball_lost"]
+[connection signal="ball_lost" from="EnemyNode/EnemyBall" to="GUI/HUD" method="_on_ball_lost"]
+[connection signal="boss_defeated" from="EnemyNode/EnemyBall" to="GUI/LevelDoneMenu" method="_on_level_done"]
+[connection signal="brick_hit" from="EnemyNode/EnemyBall" to="DynamicLevel" method="_on_brick_hit"]
+[connection signal="game_over" from="EnemyNode/EnemyBall" to="GUI/GameOverMenu" method="_on_game_over"]
