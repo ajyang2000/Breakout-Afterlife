@@ -6,7 +6,7 @@ const brick_width = 56
 const brick_height = 32
 const classic_level_threshold = 3
 const afterlife_level_threshold = 3
-const defeated_boss_threshold = 1
+const defeated_boss_threshold = 3
 
 var is_afterlife setget set_afterlife, get_afterlife
 var level : int = 1 setget , get_level

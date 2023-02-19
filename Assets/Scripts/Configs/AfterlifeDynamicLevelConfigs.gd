@@ -27,6 +27,9 @@ const ball_speed_increase_interval_tiers = [-1, 60, 45]
 
 const brick_hp_tiers = [1, 2, 3]
 
+# value[0] = number of rows
+# value[1] = number of columns
+# value[2] = random spawn chance of empty
 const boss_level_difficulty = {
 	'1': [3, 15, 0.1],
 	'2': [4, 15, 0.1],

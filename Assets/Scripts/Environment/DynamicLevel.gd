@@ -67,6 +67,5 @@ func _on_brick_hit(brick, power):
 	print(is_brick_found)
 	if (!brick.is_alive_after_hit(power) and is_brick_found):
 		_bricks.remove(brick_index)
-	print(_bricks.size())
 	if (_bricks.size() == 0):
 		emit_signal("level_done")
