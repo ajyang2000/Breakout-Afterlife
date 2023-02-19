@@ -25,10 +25,11 @@ func get_title() -> String:
 	
 func set_afterlife(value):
 	is_afterlife = value
-	print(value)
 	SaveManager.data.is_afterlife = value
+	SaveManager.save_data()
 	
 func get_afterlife():
+	SaveManager.load_data()
 	is_afterlife = SaveManager.data.is_afterlife
 	return is_afterlife
 	
@@ -64,7 +65,3 @@ func level_won():
 func reset_progress():
 	level = 1
 	boss_defeated_count = 0
-
-func _exit_tree():
-	SaveManager.data.is_afterlife = is_afterlife
-	SaveManager.save_data()
