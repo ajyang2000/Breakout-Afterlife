@@ -1,6 +1,7 @@
 extends Node
 
 const save_file = "res://save_file.save"
+
 var data = {}
 
 func _ready():
