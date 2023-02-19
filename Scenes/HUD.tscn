@@ -11,5 +11,5 @@ script = ExtResource( 2 )
 margin_right = 184.0
 margin_bottom = 184.0
 
-[node name="Health" type="Sprite" parent="HealthContainer"]
-position = Vector2( 24, 24 )
+[node name="Health" type="AnimatedSprite" parent="HealthContainer"]
+position = Vector2( 28, 24 )

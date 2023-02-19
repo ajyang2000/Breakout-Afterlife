@@ -12,6 +12,7 @@ func _ready():
 	else:
 		inventory.visible = false
 		shop.visible = false
+	GameManager.reset_progress()
 
 func _start_game():
 	if (GameManager.is_afterlife):

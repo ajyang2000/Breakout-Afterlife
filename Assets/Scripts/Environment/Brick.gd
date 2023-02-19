@@ -29,11 +29,25 @@ func _ready():
 	AudioManager.attach_sound(AudioManager.SoundType.SFX7)
 	AudioManager.attach_sound(AudioManager.SoundType.SFX8)
 
-func set_type(value):
-	_brickType = value
+func init(brick_type, hit_points):
+	_brickType = brick_type
+	match brick_type:
+		BrickType.CLASSIC:
+			_hit_points = 1
+		BrickType.NORMAL:
+			_hit_points = hit_points
+		BrickType.STRONG:
+			_hit_points = hit_points * 2
+		BrickType.SPECIAL:
+			_hit_points = hit_points
+		BrickType.BONUS:
+			_hit_points = hit_points
 
 func set_is_destructible(value):
 	_is_destructible = value
+
+func set_hit_points(value):
+	_hit_points = value
 
 func is_alive_after_hit():
 	return _hit_points > 1
@@ -49,10 +63,11 @@ func hit(power: int):
 	else:
 		AudioManager.play_sound(AudioManager.SoundType.SFX7)
 
-func _load_brick(brick_type, hit_points: int = 1):
+func _load_brick(brick_type):
 	match brick_type:
 		BrickType.CLASSIC:
 			_sprite.texture = load(_brick_classic)
+			_hit_points = 1
 		BrickType.NORMAL:
 			_sprite.texture = load(_brick_normal)
 		BrickType.STRONG:
@@ -61,4 +76,3 @@ func _load_brick(brick_type, hit_points: int = 1):
 			_sprite.texture = load(_brick_special)
 		BrickType.BONUS:
 			_sprite.texture = load(_brick_bonus)
-	_hit_points = hit_points

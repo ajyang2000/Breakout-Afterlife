@@ -10,6 +10,12 @@ const defeated_boss_threshold = 1
 
 var is_afterlife = false
 var level : int = 1 setget , get_level
+var _boss_defeated_count = 0
+
+var enemy_paddle = null
+var enemy_ball = null
+var is_balls_running = false
+var is_level_done = true
 
 func get_level():
 	return level
@@ -22,14 +28,31 @@ func level_lost():
 	SceneTransition.change_scene(SceneTransition.main_menu_scene)
 
 func level_won():
-	level += 1
-	if is_afterlife:
+	if get_tree().current_scene.filename == SceneTransition.boss_game_scene:
+		# boss defeated
+		_boss_defeated_count += 1
+		if (_boss_defeated_count >= defeated_boss_threshold):
+			SceneTransition.change_scene(SceneTransition.credits_scene)
+		else:
+			level += 1
+			SceneTransition.change_scene(SceneTransition.main_game_scene)
+	elif is_afterlife:
 		# For now, reload the scene
 		SceneTransition.change_scene(SceneTransition.main_game_scene)
+		if level % 3 == 0:
+			SceneTransition.change_scene(SceneTransition.boss_game_scene)
+		else:
+			level += 1
+			SceneTransition.change_scene(SceneTransition.main_game_scene)
 	else:
+		level += 1
 		if (level > classic_level_threshold):
 			SceneTransition.change_scene(SceneTransition.credits_scene)
-			level = 1
+			reset_progress()
 		else:
 			SceneTransition.change_scene(SceneTransition.classic_game_scene)
-		
+	print(level)
+
+func reset_progress():
+	level = 1
+	_boss_defeated_count = 0

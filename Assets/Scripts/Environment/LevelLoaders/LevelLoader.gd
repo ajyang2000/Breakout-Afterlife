@@ -10,6 +10,7 @@ func _ready():
 	var index = clamp(GameManager.level - 1, 0, _levels.size() - 1)
 	_loaded_level = load(_levels[index]).instance()
 	add_child(_loaded_level)
+	PlayerData.reset_health()
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("debug_next_level"):

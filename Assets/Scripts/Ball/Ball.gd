@@ -8,21 +8,23 @@ export var speed = 1
 onready var _visibility_notifier = $VisibilityNotifier;
 
 var _direction = Vector2(0, 1);
-var _is_running = false;
-var _is_game_over = false;
 var _initial_position: Vector2
+var _initial_direction = Vector2(0, 1)
 
 signal brick_hit(brick)
 signal ball_lost
 signal game_over
+signal boss_defeated
 
 func _ready():
 	_initial_position = self.position
+	GameManager.is_level_done = false
+	AudioManager.attach_sound(AudioManager.SoundType.SFX0)
 	
 func _physics_process(delta):
 	_check_ball_lost();
 	
-	if not _is_running:
+	if not GameManager.is_balls_running:
 		return
 	
 	_direction = _direction.normalized()
@@ -31,6 +33,9 @@ func _physics_process(delta):
 	
 	if (collision != null):
 		if PlayerData.player == collision.collider:
+			_direction = _direction.bounce(collision.normal)
+			_direction.x = get_x_bounce_direction(collision)
+		elif GameManager.enemy_paddle == collision.collider:
 			_direction = _direction.bounce(collision.normal)
 			_direction.x = get_x_bounce_direction(collision)
 		else:
@@ -48,17 +53,24 @@ func _physics_process(delta):
 
 func _check_ball_lost():
 	if not _visibility_notifier.is_on_screen():
-		if _is_running:
-			emit_signal("ball_lost")
-			PlayerData.player_health -= 1
+		if GameManager.is_balls_running:
+			var is_boss_defeated = false
+			if (self.global_position.y < 50):
+				# boss lost 
+				is_boss_defeated = true
+				emit_signal("boss_defeated")
+				on_level_done()
+			else:
+				emit_signal("ball_lost")
+				PlayerData.lose_health()
 			
-			if (PlayerData.player_health == 0):
+			if (PlayerData.player_health == 0 and !is_boss_defeated):
 				emit_signal("game_over")
-				_is_game_over = true
+				GameManager.is_level_done = true
 			else:
 				self.position = _initial_position
-				_direction = Vector2(0, 1)
-			_is_running = false
+				_direction = _initial_direction
+			GameManager.is_balls_running = false
 
 func get_x_bounce_direction(collision: KinematicCollision2D):
 	var relative_x = collision.position.x - PlayerData.player.global_position.x
@@ -84,9 +96,10 @@ func _fix_normal(normal, hit_position):
 	return normal.normalized()
 
 func on_action_pressed():
-	if not _is_game_over:
-		_is_running = true;
+	if not GameManager.is_level_done and not GameManager.is_balls_running:
+		AudioManager.play_sound(AudioManager.SoundType.SFX0)
+		GameManager.is_balls_running = true;
 
 func on_level_done():
-	_is_running = false
-	_is_game_over = true
+	GameManager.is_balls_running = false
+	GameManager.is_level_done = true

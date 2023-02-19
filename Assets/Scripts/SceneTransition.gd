@@ -5,6 +5,7 @@ const main_game_scene = "res://Scenes/Main.tscn"
 const main_menu_scene = "res://Scenes/Menus/MainMenu.tscn"
 const title_scene = "res://Scenes/Menus/TitleMenu.tscn"
 const classic_game_scene = "res://Scenes/ClassicMain.tscn"
+const boss_game_scene = "res://Scenes/MainBoss.tscn"
 
 var previous_scene : String
 
