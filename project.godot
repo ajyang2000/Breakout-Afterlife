@@ -36,6 +36,7 @@ SceneTransition="*res://Scenes/SceneTransition.tscn"
 GameManager="*res://Assets/Scripts/GameManager.gd"
 AudioManager="*res://Assets/Scripts/Audio/AudioManager.gd"
 PlayerData="*res://Assets/Scripts/Player/PlayerData.gd"
+SaveManager="*res://Assets/Scripts/SaveManager.gd"
 
 [debug]
 
