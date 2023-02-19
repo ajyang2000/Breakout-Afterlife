@@ -19,7 +19,39 @@ const classic_paddle = "res://Assets/Prefabs/Paddle/ClassicPaddle.tscn"
 var save_data = SaveManager.data
 
 func get_current_paddle() -> String:
+	if save_data == null:
+		return red_paddle
 	return save_data.current_paddle
 
 func get_current_ball() -> String:
+	if save_data == null:
+		return red_ball
 	return save_data.current_ball
+	
+func get_random_reward():
+	if save_data == null:
+		return null
+	
+	var available_rewards = [
+		red_ball,
+		blue_ball,
+		dark_ball,
+		green_ball,
+		light_ball,
+		neon_ball, 
+		classic_ball, 
+		red_paddle, 
+		blue_paddle, 
+		dark_paddle, 
+		green_paddle,
+		light_paddle, 
+		neon_paddle, 
+		classic_paddle
+	]
+	
+	for collected_paddle in save_data.owned_paddles:
+		available_rewards.remove(collected_paddle)
+	for collected_ball in save_data.owned_balls:
+		available_rewards.remove(collected_ball)
+	
+	return available_rewards[randi() % available_rewards.size()]

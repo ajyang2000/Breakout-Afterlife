@@ -8,6 +8,8 @@ const classic_level_threshold = 3
 const afterlife_level_threshold = 3
 const defeated_boss_threshold = 1
 
+const inventory = preload("res://Assets/Configs/Inventory.tres")
+
 var is_afterlife = true
 var level : int = 1 setget , get_level
 var boss_defeated_count = 0
