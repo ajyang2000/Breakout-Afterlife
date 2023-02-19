@@ -1,0 +1,31 @@
+--Credits--
+-----------
+
+
+	Created by...
+
+		Alexander Yang
+		   - and -
+		Cameron Smith
+
+	for the Brackeys Game Jam 2023
+
+
+Developed with Godot game engine in 1 week using the theme 'An end is a new beginning.'
+
+
+
+Player Controls, Level Generation, Mechanics, Menus/UI - Alexander Yang
+Concept Design, Graphics, Audio - Cameron Smith
+
+Concept Design Help - Alexander Johnson
+
+Color Palette - Endesga 32 palette by ENDESGA, lospec.com
+
+Special thanks to YOU for taking the time to enjoy our game!
+
+Please take a moment to tell us your thoughts on our itch.io page <3
+
+
+THE END
+...for real this time

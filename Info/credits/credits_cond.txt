@@ -1,0 +1,17 @@
+--Credits--
+-----------
+
+
+	Created by...
+
+		Alexander Yang
+		   - and -
+		Cameron Smith
+
+	for the Brackeys Game Jam 2023
+
+
+Developed with Godot game engine in 1 week using the theme 'An end is a new beginning.'
+
+
+THE END
