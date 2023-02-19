@@ -9,6 +9,7 @@
 - Integrate gems
 - Make other paddles, balls and gems as loot 
 - Create simple shop and coins
+- Update boss settings
 - Beautify shop
 - Beautify inventory
 - Build Classic Levels [COMPLETE]
