@@ -25,7 +25,7 @@ func _on_ball_lost():
 func _on_shield_hit(percentage):
 	var life = health_container.get_child(health_container.get_child_count() - 1)
 	if (life != null):
-		if percentage == 0:
+		if percentage <= 0:
 			life.frame = 0
 		elif percentage < 0.5:
 			life.frame = 1

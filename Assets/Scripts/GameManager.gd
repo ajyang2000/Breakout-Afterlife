@@ -8,7 +8,7 @@ const classic_level_threshold = 3
 const afterlife_level_threshold = 3
 const defeated_boss_threshold = 1
 
-var is_afterlife = true
+var is_afterlife setget set_afterlife, get_afterlife
 var level : int = 1 setget , get_level
 var boss_defeated_count = 0
 
@@ -23,11 +23,20 @@ func get_level():
 func get_title() -> String:
 	return special_title if is_afterlife else simple_title
 	
+func set_afterlife(value):
+	is_afterlife = value
+	SaveManager.data.is_afterlife = value
+	
+func get_afterlife():
+	is_afterlife = SaveManager.data.is_afterlife
+	return is_afterlife
+	
 func level_lost():
 	# For now, go back to main menu.
 	SceneTransition.change_scene(SceneTransition.main_menu_scene)
 
 func level_won():
+	print(is_afterlife)
 	if get_tree().current_scene.filename == SceneTransition.boss_game_scene:
 		# boss defeated
 		boss_defeated_count += 1
@@ -51,8 +60,11 @@ func level_won():
 			reset_progress()
 		else:
 			SceneTransition.change_scene(SceneTransition.classic_game_scene)
-	print(level)
 
 func reset_progress():
 	level = 1
 	boss_defeated_count = 0
+
+func _exit_tree():
+	SaveManager.data.is_afterlife = is_afterlife
+	SaveManager.save_data()

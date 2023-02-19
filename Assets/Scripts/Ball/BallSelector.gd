@@ -21,8 +21,8 @@ func _ready():
 	ball.connect("game_over", self, "_on_game_over")
 	ball.connect("boss_defeated", self, "_on_boss_defeated")
 		
-func _on_brick_hit(brick):
-	emit_signal("brick_hit", brick)
+func _on_brick_hit(brick, power):
+	emit_signal("brick_hit", brick, power)
 
 func _on_ball_lost():
 	emit_signal("ball_lost")

@@ -16,6 +16,12 @@ var _is_hint_shown = false
 func _ready():
 	visible = true
 	_full_credits.visible = GameManager.is_afterlife
+	if GameManager.is_afterlife:
+		AudioManager.attach_sound(AudioManager.SoundType.TRUE_CREDITS)
+		AudioManager.play_sound(AudioManager.SoundType.TRUE_CREDITS)
+	else:
+		AudioManager.attach_sound(AudioManager.SoundType.CLASSIC_CREDITS)
+		AudioManager.play_sound(AudioManager.SoundType.CLASSIC_CREDITS)
 	_end_hint.visible = false
 
 func _physics_process(delta):
@@ -39,3 +45,9 @@ func _physics_process(delta):
 				_end_credits.rect_global_position.y = 0
 				_is_at_end_credits = true
 				_time_elapsed = 0
+				
+func _exit_tree():
+	if GameManager.is_afterlife:
+		AudioManager.remove_sound(AudioManager.SoundType.TRUE_CREDITS)
+	else:
+		AudioManager.remove_sound(AudioManager.SoundType.CLASSIC_CREDITS)

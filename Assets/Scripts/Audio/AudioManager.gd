@@ -13,7 +13,12 @@ enum SoundType{
 	SFX6,
 	SFX7,
 	SFX8,
-	SFX9
+	SFX9,
+	TITLE_READ,
+	CLASSIC_CREDITS,
+	TRUE_CREDITS,
+	CLASSIC_MENU,
+	TRUE_MENU
 }
 
 var _sfx_dict = {}
@@ -26,13 +31,18 @@ func initialize():
 	_sfx_dict[SoundType.SFX0] = [AudioStreamPlayer.new(), "res://Assets/SFX/sfx0.wav"]
 	_sfx_dict[SoundType.SFX1] = [AudioStreamPlayer.new(), "res://Assets/SFX/sfx1.wav"]
 	_sfx_dict[SoundType.SFX2] = [AudioStreamPlayer.new(), "res://Assets/SFX/sfx2.wav"]
-	_sfx_dict[SoundType.SFX3] = [AudioStreamPlayer.new(), "res://Assets/SFX/sfx3.wav"]
+	_sfx_dict[SoundType.SFX3] = [AudioStreamPlayer.new(), "res://Assets/SFX/shield_drop.wav"]
 	_sfx_dict[SoundType.SFX4] = [AudioStreamPlayer.new(), "res://Assets/SFX/sfx4.wav"]
 	_sfx_dict[SoundType.SFX5] = [AudioStreamPlayer.new(), "res://Assets/SFX/sfx5.wav"]
 	_sfx_dict[SoundType.SFX6] = [AudioStreamPlayer.new(), "res://Assets/SFX/sfx6.wav"]
 	_sfx_dict[SoundType.SFX7] = [AudioStreamPlayer.new(), "res://Assets/SFX/sfx7.wav"]
-	_sfx_dict[SoundType.SFX8] = [AudioStreamPlayer.new(), "res://Assets/SFX/sfx8.wav"]
+	_sfx_dict[SoundType.SFX8] = [AudioStreamPlayer.new(), "res://Assets/SFX/brick_break.wav"]
 	_sfx_dict[SoundType.SFX9] = [AudioStreamPlayer.new(), "res://Assets/SFX/sfx9.wav"]
+	_sfx_dict[SoundType.TITLE_READ] = [AudioStreamPlayer.new(), "res://Assets/SFX/title_read.wav"]
+	_sfx_dict[SoundType.CLASSIC_CREDITS] = [AudioStreamPlayer.new(), "res://Assets/Music/classic_credits.mp3"]
+	_sfx_dict[SoundType.TRUE_CREDITS] = [AudioStreamPlayer.new(), "res://Assets/Music/true_credits.mp3"]
+	_sfx_dict[SoundType.CLASSIC_MENU] = [AudioStreamPlayer.new(), "res://Assets/Music/menu_classic.wav"]
+	_sfx_dict[SoundType.TRUE_MENU] = [AudioStreamPlayer.new(), "res://Assets/Music/menu_afterlife.wav"]
 	
 func attach_sound(type):
 	if type in _sfx_dict.keys() and not type in _attached_sfx:
@@ -45,6 +55,11 @@ func attach_sound(type):
 func play_sound(type, offset = 0):
 	if type in _sfx_dict.keys():
 		_sfx_dict[type][audio_player_index].play(offset)
+
+func remove_sound(type, offset = 0):
+	if type in _sfx_dict.keys():
+		_sfx_dict[type][audio_player_index].stop()
+		_sfx_dict.erase(type)
 
 func get_player(type) -> AudioStreamPlayer:
 	if type in _sfx_dict.keys():

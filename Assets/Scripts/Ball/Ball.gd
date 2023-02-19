@@ -45,7 +45,7 @@ func _physics_process(delta):
 			
 			if collision.collider.has_meta("Brick"):
 				var brick = collision.collider
-				emit_signal("brick_hit", brick)
+				emit_signal("brick_hit", brick, power)
 				brick.hit(power)
 			elif collision.collider.has_meta("Shield"):
 				var shield = collision.collider
