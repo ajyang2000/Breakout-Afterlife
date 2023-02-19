@@ -19,9 +19,6 @@ onready var _sprite = $Sprite
 var _hit_points
 export var _brickType = BrickType.CLASSIC
 var _is_destructible = true
-var _is_special = false
-var _is_bonus = false
-
 var _brick_dict = {}
 
 func _ready():
@@ -39,11 +36,12 @@ func init(brick_type, hit_points):
 		BrickType.NORMAL:
 			_hit_points = hit_points
 		BrickType.STRONG:
-			_hit_points = hit_points * 2
+			_hit_points = hit_points
+			_is_destructible = false
 		BrickType.SPECIAL:
-			_hit_points = hit_points
+			_hit_points = hit_points + 2
 		BrickType.BONUS:
-			_hit_points = hit_points
+			_hit_points = hit_points + 4
 
 func set_is_destructible(value):
 	_is_destructible = value
@@ -69,14 +67,11 @@ func _load_brick(brick_type):
 	match brick_type:
 		BrickType.CLASSIC:
 			_sprite.texture = load(_brick_classic)
-			_hit_points = 1
 		BrickType.NORMAL:
 			_sprite.texture = load(_brick_normal)
 		BrickType.STRONG:
 			_sprite.texture = load(_brick_strong)
 		BrickType.SPECIAL:
 			_sprite.texture = load(_brick_special)
-			_is_special = true
 		BrickType.BONUS:
 			_sprite.texture = load(_brick_bonus)
-			_is_bonus = true

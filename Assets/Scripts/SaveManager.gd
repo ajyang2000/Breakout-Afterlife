@@ -18,8 +18,8 @@ func load_data():
 	if not file.file_exists(save_file):
 		data = {
 			"is_afterlife": false,
-			"current_paddle": "res://Assets/Prefabs/Paddle/ClassicPaddle.tscn",
-			"current_ball": "res://Assets/Prefabs/Ball/ClassicBall.tscn",
+			#"current_paddle": "res://Assets/Prefabs/Paddle/ClassicPaddle.tscn",
+			#"current_ball": "res://Assets/Prefabs/Ball/ClassicBall.tscn",
 			"owned_paddles": ["res://Assets/Prefabs/Paddle/ClassicPaddle.tscn"],
 			"owned_balls": ["res://Assets/Prefabs/Ball/ClassicBall.tscn"]
 		}

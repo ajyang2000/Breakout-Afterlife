@@ -63,8 +63,6 @@ func _init_brick(brick, brickType, row, column, is_destructible, max_spawned_col
 func _on_brick_hit(brick, power):
 	var brick_index = _bricks.find(brick)
 	var is_brick_found = brick_index != -1
-	print(brick.is_alive_after_hit(power))
-	print(is_brick_found)
 	if (!brick.is_alive_after_hit(power) and is_brick_found):
 		_bricks.remove(brick_index)
 	if (_bricks.size() == 0):

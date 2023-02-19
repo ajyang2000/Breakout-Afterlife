@@ -12,6 +12,7 @@ export var action_delay_time = 2
 var _is_at_end_credits = false
 var _time_elapsed = 0
 var _is_hint_shown = false
+var sound
 
 func _ready():
 	visible = true
@@ -19,9 +20,11 @@ func _ready():
 	if GameManager.is_afterlife:
 		AudioManager.attach_sound(AudioManager.SoundType.TRUE_CREDITS)
 		AudioManager.play_sound(AudioManager.SoundType.TRUE_CREDITS)
+		sound = AudioManager.SoundType.TRUE_CREDITS
 	else:
 		AudioManager.attach_sound(AudioManager.SoundType.CLASSIC_CREDITS)
 		AudioManager.play_sound(AudioManager.SoundType.CLASSIC_CREDITS)
+		sound = AudioManager.SoundType.CLASSIC_CREDITS
 	_end_hint.visible = false
 
 func _physics_process(delta):
@@ -47,7 +50,4 @@ func _physics_process(delta):
 				_time_elapsed = 0
 				
 func _exit_tree():
-	if GameManager.is_afterlife:
-		AudioManager.remove_sound(AudioManager.SoundType.TRUE_CREDITS)
-	else:
-		AudioManager.remove_sound(AudioManager.SoundType.CLASSIC_CREDITS)
+	AudioManager.remove_sound(sound)

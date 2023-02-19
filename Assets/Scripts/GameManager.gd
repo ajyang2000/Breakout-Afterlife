@@ -36,7 +36,6 @@ func level_lost():
 	SceneTransition.change_scene(SceneTransition.main_menu_scene)
 
 func level_won():
-	print(is_afterlife)
 	if get_tree().current_scene.filename == SceneTransition.boss_game_scene:
 		# boss defeated
 		boss_defeated_count += 1
