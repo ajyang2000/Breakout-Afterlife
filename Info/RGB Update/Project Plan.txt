@@ -40,7 +40,7 @@ MAPPING stage (Day 1) -
 	We will dedicate this day to having open conversation of our ideas.
 	We will take the time to look over this document once more to make any needed changes.
 	We can have 1-2 conversations throughout the day to chat about potential features that
-		we might want to add in this update. *2*
+		we might want to add in this update. *1*
 	And lastly, we will create a VISION STATEMENT for the RGB Update that consists of the new features that
 		we intend to add in the next build.
 
@@ -57,7 +57,7 @@ ADVERTISEMENT stage (Day 7) -
 		the release date in a week.
 	Cameron will also schedule 2-3 play testers for the following week at this time (see PLAYTESTING stage).
 	At this time Cameron will also release a developer’s post on the B:A game page
-		to inform any traffic/followers of the incoming update. *1* 
+		to inform any traffic/followers of the incoming update. *2* 
 
 REST stage (Day 7-8) -
 	We will use this as an opportunity to take a day or two break from production to prepare
