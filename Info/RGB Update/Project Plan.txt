@@ -1,0 +1,168 @@
+This document is a detailed breakdown of the two-week production update for Breakout: Afterlife.
+	For now, let’s call it the RGB Update!
+
+	Disclaimer: SEE NOTE *0*
+
+	And without further ado, allow me introduce you to the RGB update...
+
+
+
+
+
+-- OVERVIEW --
+----------------
+
+Day 0 - PROJECT LAYOUT
+Day 1 - MAPPING
+Day 2-6 - NEW FEATURES
+Day 7 - ADVERTISEMENT
+Day 7-8 - REST
+Day 9-11 - COMPLETION
+Day 12 - PLAYTESTING
+Day 12-14 - POLISH
+Day 15 - ✨RELEASE✨
+
+
+
+
+
+-- RGB Update --
+----------------
+
+
+PROJECT LAYOUT (Day 0) -
+	BOOM! Already done as per this push.
+	I’m adding this here just to take this day into account for future updates.
+	I’m sure there will be a lot of copy and paste from this doc for future projects
+		but it’s still good to remember later on that this is a relevant step to consider. 😂
+
+MAPPING stage (Day 1) -
+	We will dedicate this day to having open conversation of our ideas.
+	We will take the time to look over this document once more to make any needed changes.
+	We can have 1-2 conversations throughout the day to chat about potential features that
+		we might want to add in this update. *2*
+	And lastly, we will create a VISION STATEMENT for the RGB Update that consists of the new features that
+		we intend to add in the next build.
+
+NEW FEATURES stage (Day 2-6) -
+	The first week will be spent mapping out, developing, testing, and adding new features.
+		This including any graphics, animations , SFX, and music needed to accompany the new features.
+	Put all the NEW things here.
+	Don’t worry about perfecting them in this stage - just map out any potential new features desired and
+		add them in here in a mostly working state. A couple of bugs here won’t bite. ☺️
+
+ADVERTISEMENT stage (Day 7) -
+	Upon completion of the first week of the jam,
+		Cameron and Alex will each reach out to 2-3 of their “green grass” people to let them know about
+		the release date in a week.
+	Cameron will also schedule 2-3 play testers for the following week at this time (see PLAYTESTING stage).
+	At this time Cameron will also release a developer’s post on the B:A game page
+		to inform any traffic/followers of the incoming update. *1* 
+
+REST stage (Day 7-8) -
+	We will use this as an opportunity to take a day or two break from production to prepare
+		for our final week before the update release. (Rest is productive!!!)
+
+COMPLETION stage (Day 9-11) -
+	Returning to production, the next few days will be spent bringing any new features to completion.
+	This means taking the time to get any features that were added in the first stage working
+		relatively bug-free and bringing the whole game’s update to a certain point of completion.
+	During this stage, we will be as realistic as we can with ourselves about what we can feasibly finish.
+	Any features we created in NEW FEATURES that we decide won’t be finished in time can be unplugged
+		and any relevant information/assets/code will be placed into a dedicated FUTURE UPDATES folder
+		in the INFO directory.
+	We can always come back to them, don’t worry!
+	We will not be adding any new features in at this stage.
+
+PLAYTESTING stage (Day 12) -
+	This day will be spent largely testing out the finished game for ourselves,
+		introducing the update to a few new faces, and collectively taking notes on our findings.
+	Let’s map out our POLISH stage using the info we gather from this stage.
+
+POLISH stage (Day 13-14) -
+	Using our production map from PLAYTESTING, we will do any finishing touches, crossing T’s & dotting I’s,
+		and squashing any little bugs that might have made it this far.
+	Cameron will also begin putting any necessary updates together in preparation
+		for the Itch page update coming up. 
+
+✨RELEASE✨ (Day 15) -
+	The morning/afternoon following our final day of production,
+		the new build will be uploaded onto the itch page.
+	This will be a perfect time to send follow-up texts to the people we chatted with in the ADVERTISEMENT stage
+		to let them know the update is out!!!
+	The game will be posted with the opportunity of donations, set at a recommended $2.
+	Any proceeds will be split 50/50 between Cameron and Alex. (Let’s get those custom PC orders filled lmao)
+
+
+
+
+
+-- NOTES --
+-----------
+
+*0* DISCLAIMER:
+	As with any documents in BA’s initial release, any and all of this information is subject to change.
+		Please change, modify, or update any information that you feel would make sense another way.
+		I’m always open to ideas that are better than what’s written down so far.
+
+	I hoped to set this model up in a way that it works well with wiggle room/handling life situations,
+	and allowing mental health to take priority.
+	I am of the belief that in the average week, doing activities (just like this one!)...
+		that you make a conscious decision to treat them meaningful to your life,
+		will add to a greater sense of enrichment and fulfillment in those days overall,
+		but there are always going to be those days/weeks/seasons in life that you just can’t be
+		having projects in mind all the time.
+	We need to have systems in place for those times!
+	And with that said:
+
+	Had a really shitty day today on DAY 5 and need a breather before jumping back into production?
+	Well it turns out that -tomorrow- is actually DAY 5 after all, and -today- is DAY 4.5,
+		which is part of the REST phase. 😂
+		So just chill out, do something to relax and take your mind off the day,
+		and we can pick up tomorrow or the next day that you feel up to it.
+			(“You” being either one or both of us)
+
+	Feeling like you wish you had just one more day to add in that new feature you’ve been so excited about
+		finishing the past few days?
+	Well you’re in luck, because it just so happens that the NEW FEATURES stage just gained an extra day
+		in your honor!
+
+	Indexing these days rather than setting dates will hopefully remove any scary feelings of rigidity
+		(see: all the trauma experienced in the last 2 hours of the game jam lmao)
+	Having them numbered allows us to feel as though they aren’t just abstract points in time
+		where "things" happen. lol
+	That would be a MONUMENTAL no-no when it comes to procrastination.
+	If something can happen any time, and doesn’t really NEED to end ever, then why the hell would we
+		feel like we want to do anything meaningful on the project TODAY?
+	“We have all the time in the world…” 🤓
+	I believe that indexing the days combats this potential subconscious message,
+		and will allow more potential for productivity.
+
+
+
+*1* I’m thinking of having a medium-length convo sometime near the beginning of the day, preferably over VC,
+		to chat about ideas very broadly and generally.
+	
+	Throughout the day we can each steep in those ideas and allow ourselves
+			to continue conceptualizing them and determining their feasibility.
+
+	In the later half of the day, we can have a conversation to touch base once more and decide
+		what we want to put in our new update.
+
+
+
+*2*  "Green grass" is a sales term that refers to the people that you know well personally,
+		and who tend to be the most open to hearing about what you are creating/advertising.
+
+	Reaching out to these people will provide us with a small feeling of external motivation
+		to have the project fulfilled by the soft deadline.
+	When we talk to these people about our planned update, we will do so in a way that points to a range
+		of time in the near future, not a set date.
+		(Example: "Hey there friend, you know that game I told you we released not too long ago?
+			We are in the process of putting it together now, and plan to have it released early next week!
+			Would you be interested in me sending you a link to try it out once we do?")
+		This is obviously written in my own words, but encapsulates the general message we might be looking
+			to send out to our "green grass" peeps.
+	Just a little bit of pressure can add a healthy amount of motivation to push us through the last half
+		of our production plan. 😂
+
