@@ -26,16 +26,16 @@ func _ready():
 				pass
 			elif random < (empty_brick_range + 0.03):
 				var brick = _brick.instance()
-				_init_brick(brick, brick.BrickType.SPECIAL, row, column, true, columns, rows)
+				_init_brick(brick, BrickData.BrickType.SPECIAL, row, column, true, columns, rows)
 			elif random < (empty_brick_range + 0.04):
 				var brick = _brick.instance()
-				_init_brick(brick, brick.BrickType.BONUS, row, column, true, columns, rows)
+				_init_brick(brick, BrickData.BrickType.BONUS, row, column, true, columns, rows)
 			elif random < (empty_brick_range + 0.04 + GameManager.level / 100.0):
 				var brick = _brick.instance()
-				_init_brick(brick, brick.BrickType.STRONG, row, column, true, columns, rows)
+				_init_brick(brick, BrickData.BrickType.STRONG, row, column, true, columns, rows)
 			else:
 				var brick = _brick.instance()
-				_init_brick(brick, brick.BrickType.NORMAL, row, column, true, columns, rows)
+				_init_brick(brick, BrickData.BrickType.NORMAL, row, column, true, columns, rows)
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("debug_next_level"):
