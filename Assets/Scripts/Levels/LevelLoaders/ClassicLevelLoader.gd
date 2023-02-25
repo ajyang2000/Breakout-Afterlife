@@ -1,4 +1,4 @@
-extends "res://Assets/Scripts/Environment/LevelLoaders/LevelLoader.gd"
+extends "res://Assets/Scripts/Levels/LevelLoaders/LevelLoader.gd"
 
 const level1 = "res://Scenes/Levels/ClassicLevel1.tscn"
 const level2 = "res://Scenes/Levels/ClassicLevel2.tscn"

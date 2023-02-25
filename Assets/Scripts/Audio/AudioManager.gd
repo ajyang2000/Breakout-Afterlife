@@ -56,7 +56,7 @@ func play_sound(type, offset = 0):
 	if type in _sfx_dict.keys():
 		_sfx_dict[type][audio_player_index].play(offset)
 
-func remove_sound(type, offset = 0):
+func remove_sound(type):
 	if type in _sfx_dict.keys():
 		_sfx_dict[type][audio_player_index].stop()
 		_sfx_dict.erase(type)

@@ -10,7 +10,8 @@ func _go_to_main_menu_scene():
 	SceneTransition.change_scene(SceneTransition.main_menu_scene)
 
 func _on_restart_button_pressed():
-	get_tree().reload_current_scene()
+	if get_tree().reload_current_scene() != OK:
+		print("An unexpected error occured when trying to reload scene")
 
 func _quit_game():
 	get_tree().quit()

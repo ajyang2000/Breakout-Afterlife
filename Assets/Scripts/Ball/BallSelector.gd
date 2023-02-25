@@ -33,12 +33,6 @@ func _on_game_over():
 func _on_boss_defeated():
 	emit_signal("boss_defeated")
 
-
-func _on_level_done():
-	if (ball != null):
-		ball.on_level_done()
-
-
 func _on_action_pressed():
 	if (ball != null):
 		ball.on_action_pressed()

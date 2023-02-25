@@ -44,7 +44,7 @@ func _physics_process(delta):
 func _init_brick(brick, brickType, row, column, is_destructible, max_spawned_column, max_spawned_row):
 	var hp = 1
 	if (GameManager.is_afterlife):
-		var tier = int((GameManager.level - 1) / 3)
+		var tier = int((GameManager.level - 1) / 3.0)
 		hp = _level_config.brick_hp_tiers[tier]
 	brick.init(brickType, hp)
 	brick.set_is_destructible(is_destructible)
