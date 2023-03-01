@@ -1,0 +1,54 @@
+First, see NOTE *0* at the bottom of this document
+
+
+-- TASKS --
+-----------
+
+Help Alex and Alison with any of their tasks *3*
+
+Recreate the OST for Afterlife Gameplay *1*
+
+Compose OSTs:
+	Classic Gameplay (something simple) 
+	Afterlife Title/Menu
+	Afterlife Boss OST *2*
+	Classic Title/Menu (again, simple)
+
+SFX:
+	Modify existing SFX to sound nice with the music
+	Create any new SFX we might need
+
+
+
+
+
+-- NOTES --
+-----------
+
+
+*0* I have done my best to list my tasks in order of priority.
+	
+	Hey, Alison! Did you know you can use <COMMAND + F> buttons on Mac to use the "find" feature in a text file
+		or webpage? If you highlight a note reference (i.e. *0*) anywhere in this file, you can use that feature
+		to easily jump down to the the note itself, and again once more to jump right back to the reference
+		where you came from!
+
+	I try to write text files with this format so any ideas or explanation I want to add to
+		a topic can be placed somewhere where they won't clutter the core topics above.
+		Imagine if I wrote all this info right at the top of the document, and we had to scroll past it
+		every time we opened it - no thank you! lol
+
+
+
+*1* I found out a bit late into the project that I don't have the legal right to use the drum pack in that song
+	for our purposes, and don't currently see the need in paying the $80 to get it lol
+
+	I'm just gonna start over. I think I can do a copy-paste on all the other instruments at least! Oopsies.
+
+
+
+*2* This will just be a modified version of Afterlife Gameplay - definitely more intense than
+	the regular OST!
+
+*3* I'll add them here once their respective plans have been posted
+	
