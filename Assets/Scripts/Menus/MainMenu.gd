@@ -8,22 +8,15 @@ func _ready():
 	GameManager.reset_progress()
 	start_button.grab_focus()
 	
-	if GameManager.is_afterlife:
-		AudioManager.attach_sound(AudioManager.SoundType.TRUE_MENU)
-		AudioManager.play_sound(AudioManager.SoundType.TRUE_MENU)
-	else:
-		AudioManager.attach_sound(AudioManager.SoundType.CLASSIC_MENU)
-		AudioManager.play_sound(AudioManager.SoundType.CLASSIC_MENU)
-	
-	AudioManager.attach_sound(AudioManager.SoundType.SFX1)
-	AudioManager.attach_sound(AudioManager.SoundType.SFX2)
+	var sound_type = AudioManager.MusicType.TRUE_MENU if GameManager.is_afterlife else AudioManager.MusicType.CLASSIC_MENU
+	AudioManager.play_music(sound_type)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("ui_down"):
-		AudioManager.play_sound(AudioManager.SoundType.SFX1)
+		AudioManager.play_sfx(AudioManager.SFXType.SFX1)
 	
 	elif Input.is_action_just_pressed("action"):
-		AudioManager.play_sound(AudioManager.SoundType.SFX2)
+		AudioManager.play_sfx(AudioManager.SFXType.SFX2)
 
 func _start_game():
 	if (GameManager.is_afterlife):
@@ -36,9 +29,6 @@ func _go_to_credits():
 	
 func _quit_game():
 	get_tree().quit()
-	
+
 func _exit_tree():
-	if GameManager.is_afterlife:
-		AudioManager.remove_sound(AudioManager.SoundType.TRUE_MENU)
-	else:
-		AudioManager.remove_sound(AudioManager.SoundType.CLASSIC_MENU)
+	AudioManager.stop_music()

@@ -18,7 +18,6 @@ signal boss_defeated
 
 func _ready():
 	_initial_position = self.global_position
-	AudioManager.attach_sound(AudioManager.SoundType.SFX0)
 	
 func _physics_process(delta):
 	_check_ball_lost();
@@ -94,5 +93,5 @@ func _fix_normal(normal, hit_position):
 
 func on_action_pressed():
 	if not GameManager.is_level_done and not GameManager.is_balls_running:
-		AudioManager.play_sound(AudioManager.SoundType.SFX0)
+		AudioManager.play_sfx(AudioManager.SFXType.SFX0)
 		GameManager.is_balls_running = true;

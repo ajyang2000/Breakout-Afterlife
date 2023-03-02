@@ -12,9 +12,6 @@ var _brick_dict = {}
 func _ready():
 	set_meta("Brick", true)
 	_sprite.texture = _brick_data.get_brick_texture(_brick_type)
-	
-	AudioManager.attach_sound(AudioManager.SoundType.SFX7)
-	AudioManager.attach_sound(AudioManager.SoundType.SFX8)
 
 func init(brick_type, hit_points):
 	_brick_type = brick_type
@@ -37,6 +34,6 @@ func hit(power: int = 1):
 	
 	if (_hit_points <= 0):
 		queue_free()
-		AudioManager.play_sound(AudioManager.SoundType.SFX8)
+		AudioManager.play_sfx(AudioManager.SFXType.SFX8)
 	else:
-		AudioManager.play_sound(AudioManager.SoundType.SFX7)
+		AudioManager.play_sfx(AudioManager.SFXType.SFX7)

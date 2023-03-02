@@ -55,12 +55,12 @@ text = "Restart Level"
 [node name="PauseMenu" parent="GUI" instance=ExtResource( 4 )]
 visible = false
 
-[connection signal="level_done" from="LevelLoader" to="GUI/LevelDoneMenu" method="_on_level_done"]
 [connection signal="level_done" from="LevelLoader" to="." method="_on_level_done"]
+[connection signal="level_done" from="LevelLoader" to="GUI/LevelDoneMenu" method="_on_level_done"]
 [connection signal="ball_lost" from="BallSelector" to="GUI/HUD" method="_on_ball_lost"]
 [connection signal="brick_hit" from="BallSelector" to="LevelLoader" method="_on_brick_hit"]
-[connection signal="game_over" from="BallSelector" to="GUI/GameOverMenu" method="_on_game_over"]
 [connection signal="game_over" from="BallSelector" to="." method="_on_level_done"]
+[connection signal="game_over" from="BallSelector" to="GUI/GameOverMenu" method="_on_game_over"]
 [connection signal="control_action" from="PaddleSelector" to="BallSelector" method="_on_action_pressed"]
 [connection signal="control_start" from="PaddleSelector" to="GUI/PauseMenu" method="_on_paused_pressed"]
 [connection signal="pressed" from="GUI/GameOverMenu/ResetButton" to="GUI/GameOverMenu" method="_on_restart_button_pressed"]

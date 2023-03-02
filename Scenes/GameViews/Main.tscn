@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tileset/WallTileset.tres" type="TileSet" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://Scenes/Menus/PauseMenu.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Scripts/Player/PlayerSelector.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Scripts/Ball/BallSelector.gd" type="Script" id=9]
-[ext_resource path="res://Assets/Music/Breakout Afterlife.mp3" type="AudioStream" id=10]
 [ext_resource path="res://Assets/Scripts/GameView/GameView.gd" type="Script" id=11]
 
 [node name="Main" type="Node2D"]
@@ -31,7 +30,6 @@ position = Vector2( 464, 672 )
 script = ExtResource( 8 )
 
 [node name="DynamicLevel" parent="." instance=ExtResource( 4 )]
-max_columns = 14
 
 [node name="Shield" parent="." instance=ExtResource( 3 )]
 position = Vector2( 120, 720 )
@@ -49,10 +47,6 @@ visible = false
 
 [node name="PauseMenu" parent="GUI" instance=ExtResource( 7 )]
 visible = false
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 10 )
-autoplay = true
 
 [connection signal="ball_lost" from="BallSelector" to="Shield" method="_on_ball_lost"]
 [connection signal="ball_lost" from="BallSelector" to="GUI/HUD" method="_on_ball_lost"]

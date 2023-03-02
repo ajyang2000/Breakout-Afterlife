@@ -4,7 +4,7 @@ const _brick = preload("res://Assets/Prefabs/Environment/Bricks/Brick.tscn")
 const _level_config = preload("res://Assets/Scripts/Configs/AfterlifeDynamicLevelConfigs.gd")
 
 export var offset = Vector2(128, 24)
-export var max_columns = 13
+export var max_columns = 14
 export var is_boss_level = false
 
 var _bricks = []
@@ -16,9 +16,7 @@ func _ready():
 	var empty_brick_range = data[_level_config.empty_spawn_chance]
 	var columns = data[_level_config.column_index]
 	var rows = data[_level_config.row_index]
-	PlayerData.reset_health()
 	
-	columns = 14
 	for column in range(columns):
 		for row in range(rows):
 			var random = rand_range(0, 1)

@@ -13,15 +13,14 @@ func set_is_paused(value):
 func get_is_paused():
 	return _is_paused
 
-
 func _on_ResumeButton_pressed():
 	set_is_paused(false)
-
 
 func _on_QuitButton_pressed():
 	get_tree().quit()
 
 func _on_MainMenuButton_pressed():
+	set_is_paused(false)
 	SceneTransition.change_scene(SceneTransition.main_menu_scene)
 
 func _on_paused_pressed():

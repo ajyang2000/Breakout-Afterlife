@@ -17,11 +17,14 @@ var enemy_ball = null
 var is_balls_running = false
 var is_level_done = true
 
+func _ready():
+	SaveManager.load_data()
+
 func get_level():
 	return level
 
 func get_title() -> String:
-	return special_title if is_afterlife else simple_title
+	return special_title if get_afterlife() else simple_title
 	
 func set_afterlife(value):
 	is_afterlife = value
