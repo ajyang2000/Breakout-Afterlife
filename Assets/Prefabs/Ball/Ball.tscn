@@ -4,16 +4,16 @@
 
 [sub_resource type="CircleShape2D" id=1]
 
-[node name="Ball" type="KinematicBody2D"]
+[node name="Ball" type="CharacterBody2D"]
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 region_rect = Rect2( 0, 0, 80, 80 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="VisibilityNotifier" type="VisibilityNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2( -0.25, -0.25 )
 scale = Vector2( 1.03333, 1.03333 )
 rect = Rect2( -7.5, -7.5, 15, 15 )

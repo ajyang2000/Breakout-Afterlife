@@ -1,11 +1,11 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 const speed_multiplier = 500;
 
-export var power: int = 1
-export var speed: int = 1
+@export var power: int = 1
+@export var speed: int = 1
 
-onready var _visibility_notifier = $VisibilityNotifier;
+@onready var _visibility_notifier = $VisibleOnScreenNotifier3D;
 
 var _direction: Vector2 = Vector2(0, 1);
 var _initial_position: Vector2
@@ -30,23 +30,23 @@ func _physics_process(delta):
 	var collision = move_and_collide(velocity);
 	
 	if (collision != null):
-		if PlayerData.player == collision.collider:
-			_direction = _direction.bounce(collision.normal)
+		if PlayerData.player == collision.get_collider():
+			_direction = _direction.bounce(collision.get_normal())
 			_direction.x = get_x_bounce_direction(collision)
-		elif GameManager.enemy_paddle == collision.collider:
-			_direction = _direction.bounce(collision.normal)
+		elif GameManager.enemy_paddle == collision.get_collider():
+			_direction = _direction.bounce(collision.get_normal())
 			_direction.x = -get_x_bounce_direction(collision)
 		else:
-			var hit_position = collision.position - collision.collider.global_position
-			var normal = _fix_normal(collision.normal, hit_position)
+			var hit_position = collision.get_position() - collision.get_collider().global_position
+			var normal = _fix_normal(collision.get_normal(), hit_position)
 			_direction = _direction.bounce(normal)
 			
-			if collision.collider.has_meta("Brick"):
-				var brick = collision.collider
+			if collision.get_collider().has_meta("Brick"):
+				var brick = collision.get_collider()
 				emit_signal("brick_hit", brick, power)
 				brick.hit(power)
-			elif collision.collider.has_meta("Shield"):
-				var shield = collision.collider
+			elif collision.get_collider().has_meta("Shield"):
+				var shield = collision.get_collider()
 				shield.hit(power)
 
 func _check_ball_lost():
@@ -69,7 +69,7 @@ func _check_ball_lost():
 		GameManager.is_balls_running = false
 
 func get_x_bounce_direction(collision: KinematicCollision2D):
-	var relative_x = collision.position.x - PlayerData.player.global_position.x
+	var relative_x = collision.get_position().x - PlayerData.player.global_position.x
 	var percentage = relative_x / PlayerData.player_width
 	return (percentage - 0.5) * 2 # should be in range [-1, 1]
 

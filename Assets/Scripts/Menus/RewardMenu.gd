@@ -2,7 +2,7 @@ extends "res://Assets/Scripts/Menus/Menu.gd"
 
 const inventory = preload("res://Assets/Configs/Inventory.tres")
 
-onready var sprite = $RewardsOverlay/Sprite
+@onready var sprite = $RewardsOverlay/Sprite2D
 
 func _on_level_done():
 	visible = true

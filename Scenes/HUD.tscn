@@ -8,8 +8,8 @@ anchor_bottom = 1.0
 script = ExtResource( 2 )
 
 [node name="HealthContainer" type="MarginContainer" parent="."]
-margin_right = 184.0
-margin_bottom = 184.0
+offset_right = 184.0
+offset_bottom = 184.0
 
-[node name="Health" type="AnimatedSprite" parent="HealthContainer"]
+[node name="Health" type="AnimatedSprite2D" parent="HealthContainer"]
 position = Vector2( 28, 24 )

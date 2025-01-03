@@ -8,87 +8,87 @@
 [node name="StaticBody2D" type="StaticBody2D"]
 script = ExtResource( 4 )
 
-[node name="CollisionPolygon" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 12, 48, 12, 12, 24, 0, 768, 0, 780, 12, 780, 48 )
+[node name="CollisionPolygon3D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array( 12, 48, 12, 12, 24, 0, 768, 0, 780, 12, 780, 48 )
 
 [node name="VisualContainer" type="Node2D" parent="."]
 
-[node name="LeftShield" type="AnimatedSprite" parent="VisualContainer"]
+[node name="LeftShield" type="AnimatedSprite2D" parent="VisualContainer"]
 position = Vector2( 36, 24 )
 frames = ExtResource( 1 )
 animation = "shield_hit"
 
-[node name="MiddleShield" type="AnimatedSprite" parent="VisualContainer"]
+[node name="MiddleShield" type="AnimatedSprite2D" parent="VisualContainer"]
 position = Vector2( 84, 24 )
 frames = ExtResource( 2 )
 animation = "shield_hit"
 
-[node name="MiddleShield2" type="AnimatedSprite" parent="VisualContainer"]
+[node name="MiddleShield2" type="AnimatedSprite2D" parent="VisualContainer"]
 position = Vector2( 132, 24 )
 frames = ExtResource( 2 )
 animation = "shield_hit"
 
-[node name="MiddleShield3" type="AnimatedSprite" parent="VisualContainer"]
+[node name="MiddleShield3" type="AnimatedSprite2D" parent="VisualContainer"]
 position = Vector2( 180, 24 )
 frames = ExtResource( 2 )
 animation = "shield_hit"
 
-[node name="MiddleShield4" type="AnimatedSprite" parent="VisualContainer"]
+[node name="MiddleShield4" type="AnimatedSprite2D" parent="VisualContainer"]
 position = Vector2( 228, 24 )
 frames = ExtResource( 2 )
 animation = "shield_hit"
 
-[node name="MiddleShield5" type="AnimatedSprite" parent="VisualContainer"]
+[node name="MiddleShield5" type="AnimatedSprite2D" parent="VisualContainer"]
 position = Vector2( 276, 24 )
 frames = ExtResource( 2 )
 animation = "shield_hit"
 
-[node name="MiddleShield6" type="AnimatedSprite" parent="VisualContainer"]
+[node name="MiddleShield6" type="AnimatedSprite2D" parent="VisualContainer"]
 position = Vector2( 324, 24 )
 frames = ExtResource( 2 )
 animation = "shield_hit"
 
-[node name="MiddleShield7" type="AnimatedSprite" parent="VisualContainer"]
+[node name="MiddleShield7" type="AnimatedSprite2D" parent="VisualContainer"]
 position = Vector2( 372, 24 )
 frames = ExtResource( 2 )
 animation = "shield_hit"
 
-[node name="MiddleShield8" type="AnimatedSprite" parent="VisualContainer"]
+[node name="MiddleShield8" type="AnimatedSprite2D" parent="VisualContainer"]
 position = Vector2( 420, 24 )
 frames = ExtResource( 2 )
 animation = "shield_hit"
 
-[node name="MiddleShield9" type="AnimatedSprite" parent="VisualContainer"]
+[node name="MiddleShield9" type="AnimatedSprite2D" parent="VisualContainer"]
 position = Vector2( 468, 24 )
 frames = ExtResource( 2 )
 animation = "shield_hit"
 
-[node name="MiddleShield10" type="AnimatedSprite" parent="VisualContainer"]
+[node name="MiddleShield10" type="AnimatedSprite2D" parent="VisualContainer"]
 position = Vector2( 516, 24 )
 frames = ExtResource( 2 )
 animation = "shield_hit"
 
-[node name="MiddleShield11" type="AnimatedSprite" parent="VisualContainer"]
+[node name="MiddleShield11" type="AnimatedSprite2D" parent="VisualContainer"]
 position = Vector2( 564, 24 )
 frames = ExtResource( 2 )
 animation = "shield_hit"
 
-[node name="MiddleShield12" type="AnimatedSprite" parent="VisualContainer"]
+[node name="MiddleShield12" type="AnimatedSprite2D" parent="VisualContainer"]
 position = Vector2( 612, 24 )
 frames = ExtResource( 2 )
 animation = "shield_hit"
 
-[node name="MiddleShield13" type="AnimatedSprite" parent="VisualContainer"]
+[node name="MiddleShield13" type="AnimatedSprite2D" parent="VisualContainer"]
 position = Vector2( 660, 24 )
 frames = ExtResource( 2 )
 animation = "shield_hit"
 
-[node name="MiddleShield14" type="AnimatedSprite" parent="VisualContainer"]
+[node name="MiddleShield14" type="AnimatedSprite2D" parent="VisualContainer"]
 position = Vector2( 708, 24 )
 frames = ExtResource( 2 )
 animation = "shield_hit"
 
-[node name="RightShield" type="AnimatedSprite" parent="VisualContainer"]
+[node name="RightShield" type="AnimatedSprite2D" parent="VisualContainer"]
 position = Vector2( 756, 24 )
 frames = ExtResource( 3 )
 animation = "shield_hit"

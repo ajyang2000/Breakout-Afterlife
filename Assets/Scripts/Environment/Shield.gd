@@ -2,8 +2,8 @@ extends StaticBody2D
 
 const DESTROY_SFX_DELAY_TIME = 0.5
 
-onready var _visuals = $VisualContainer
-onready var _collider = $CollisionPolygon
+@onready var _visuals = $VisualContainer
+@onready var _collider = $CollisionPolygon3D
 
 var initial_hit_points: int = 3
 var hit_points: int = 3
@@ -33,7 +33,7 @@ func hit(power: int):
 		t.set_one_shot(true)
 		self.add_child(t)
 		t.start()
-		yield(t, "timeout")
+		await t.timeout
 		AudioManager.play_sfx(AudioManager.SFXType.SFX4)
 		t.queue_free()
 		

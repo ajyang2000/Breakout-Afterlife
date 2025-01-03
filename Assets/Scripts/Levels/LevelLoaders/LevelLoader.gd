@@ -8,7 +8,7 @@ signal level_done
 func _ready():
 	_load_levels()
 	var index = clamp(GameManager.level - 1, 0, _levels.size() - 1)
-	_loaded_level = load(_levels[index]).instance()
+	_loaded_level = load(_levels[index]).instantiate()
 	add_child(_loaded_level)
 
 func _physics_process(delta):

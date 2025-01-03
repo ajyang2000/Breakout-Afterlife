@@ -1,10 +1,10 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 const acceleration = 500
 const friction = 200
 
-export var slots: int = 0
-export var speed: int = 1
+@export var slots: int = 0
+@export var speed: int = 1
 
 var _velocity = Vector2.ZERO
 var _y_position = 0
@@ -19,7 +19,8 @@ func _physics_process(delta):
 	
 	_handle_movement()
 		
-	move_and_slide(_velocity)
+	set_velocity(_velocity)
+	move_and_slide()
 	_velocity = _velocity.move_toward(Vector2.ZERO, friction)
 
 func _handle_movement():

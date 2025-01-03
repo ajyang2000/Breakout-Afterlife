@@ -2,10 +2,10 @@ extends StaticBody2D
 
 const _brick_data = preload("res://Assets/Resources/BrickData.tres")
 
-onready var _sprite: Sprite = $Sprite
+@onready var _sprite: Sprite2D = $Sprite2D
 
 var _hit_points = 1
-export(int) var _brick_type = BrickData.BrickType.CLASSIC
+@export var _brick_type: int = BrickData.BrickType.CLASSIC
 var _is_destructible = true
 var _brick_dict = {}
 

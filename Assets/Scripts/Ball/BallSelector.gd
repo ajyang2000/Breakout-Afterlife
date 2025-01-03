@@ -11,15 +11,15 @@ var ball
 
 func _ready():
 	if (GameManager.is_afterlife):
-		ball = load(inventory.get_current_ball()).instance()
+		ball = load(inventory.get_current_ball()).instantiate()
 	else:
-		ball = load(inventory.classic_ball).instance()
+		ball = load(inventory.classic_ball).instantiate()
 
 	add_child(ball)
-	ball.connect("brick_hit", self, "_on_brick_hit")
-	ball.connect("ball_lost", self, "_on_ball_lost")
-	ball.connect("game_over", self, "_on_game_over")
-	ball.connect("boss_defeated", self, "_on_boss_defeated")
+	ball.connect("brick_hit", Callable(self, "_on_brick_hit"))
+	ball.connect("ball_lost", Callable(self, "_on_ball_lost"))
+	ball.connect("game_over", Callable(self, "_on_game_over"))
+	ball.connect("boss_defeated", Callable(self, "_on_boss_defeated"))
 		
 func _on_brick_hit(brick, power):
 	emit_signal("brick_hit", brick, power)

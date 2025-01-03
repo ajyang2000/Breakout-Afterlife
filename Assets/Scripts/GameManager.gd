@@ -8,8 +8,8 @@ const classic_level_threshold = 3
 const afterlife_level_threshold = 3
 const defeated_boss_threshold = 3
 
-var is_afterlife setget set_afterlife, get_afterlife
-var level : int = 1 setget , get_level
+var is_afterlife : get = get_afterlife, set = set_afterlife
+var level : int = 1: get = get_level
 var boss_defeated_count = 0
 
 var enemy_paddle = null
@@ -38,32 +38,32 @@ func get_afterlife():
 	
 func level_lost():
 	# For now, go back to main menu.
-	SceneTransition.change_scene(SceneTransition.main_menu_scene)
+	SceneTransition.change_scene_to_file(SceneTransition.main_menu_scene)
 
 func level_won():
 	if get_tree().current_scene.filename == SceneTransition.boss_game_scene:
 		# boss defeated
 		boss_defeated_count += 1
 		if (boss_defeated_count >= defeated_boss_threshold):
-			SceneTransition.change_scene(SceneTransition.credits_scene)
+			SceneTransition.change_scene_to_file(SceneTransition.credits_scene)
 		else:
 			level += 1
-			SceneTransition.change_scene(SceneTransition.main_game_scene)
+			SceneTransition.change_scene_to_file(SceneTransition.main_game_scene)
 	elif is_afterlife:
 		# For now, reload the scene
-		SceneTransition.change_scene(SceneTransition.main_game_scene)
+		SceneTransition.change_scene_to_file(SceneTransition.main_game_scene)
 		if level % 3 == 0:
-			SceneTransition.change_scene(SceneTransition.boss_game_scene)
+			SceneTransition.change_scene_to_file(SceneTransition.boss_game_scene)
 		else:
 			level += 1
-			SceneTransition.change_scene(SceneTransition.main_game_scene)
+			SceneTransition.change_scene_to_file(SceneTransition.main_game_scene)
 	else:
 		level += 1
 		if (level > classic_level_threshold):
-			SceneTransition.change_scene(SceneTransition.credits_scene)
+			SceneTransition.change_scene_to_file(SceneTransition.credits_scene)
 			reset_progress()
 		else:
-			SceneTransition.change_scene(SceneTransition.classic_game_scene)
+			SceneTransition.change_scene_to_file(SceneTransition.classic_game_scene)
 
 func reset_progress():
 	level = 1

@@ -6,10 +6,10 @@
 radius = 15.9997
 height = 156.001
 
-[node name="Paddle" type="KinematicBody2D"]
+[node name="Paddle" type="CharacterBody2D"]
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

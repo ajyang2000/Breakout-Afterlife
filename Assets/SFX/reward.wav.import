@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/reward.wav-116ee371f6fc6af215cfd612bb770268.sample"
+type="AudioStreamWAV"
+uid="uid://cqjc33pi25vek"
+path="res://.godot/imported/reward.wav-116ee371f6fc6af215cfd612bb770268.sample"
 
 [deps]
 
 source_file="res://Assets/SFX/reward.wav"
-dest_files=[ "res://.import/reward.wav-116ee371f6fc6af215cfd612bb770268.sample" ]
+dest_files=["res://.godot/imported/reward.wav-116ee371f6fc6af215cfd612bb770268.sample"]
 
 [params]
 

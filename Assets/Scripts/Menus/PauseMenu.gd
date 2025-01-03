@@ -21,7 +21,7 @@ func _on_QuitButton_pressed():
 
 func _on_MainMenuButton_pressed():
 	set_is_paused(false)
-	SceneTransition.change_scene(SceneTransition.main_menu_scene)
+	SceneTransition.change_scene_to_file(SceneTransition.main_menu_scene)
 
 func _on_paused_pressed():
 	set_is_paused(!_is_paused)

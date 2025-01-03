@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/menu_afterlife.wav-1510e3e0f524ed083d3c5daf185b5a5c.sample"
+type="AudioStreamWAV"
+uid="uid://bwa8u16q3gxdn"
+path="res://.godot/imported/menu_afterlife.wav-1510e3e0f524ed083d3c5daf185b5a5c.sample"
 
 [deps]
 
 source_file="res://Assets/Music/menu_afterlife.wav"
-dest_files=[ "res://.import/menu_afterlife.wav-1510e3e0f524ed083d3c5daf185b5a5c.sample" ]
+dest_files=["res://.godot/imported/menu_afterlife.wav-1510e3e0f524ed083d3c5daf185b5a5c.sample"]
 
 [params]
 

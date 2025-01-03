@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/title_read.wav-8b7db20220ba892521bc62db0f48a032.sample"
+type="AudioStreamWAV"
+uid="uid://bj7tfir5fd6tu"
+path="res://.godot/imported/title_read.wav-8b7db20220ba892521bc62db0f48a032.sample"
 
 [deps]
 
 source_file="res://Assets/SFX/title_read.wav"
-dest_files=[ "res://.import/title_read.wav-8b7db20220ba892521bc62db0f48a032.sample" ]
+dest_files=["res://.godot/imported/title_read.wav-8b7db20220ba892521bc62db0f48a032.sample"]
 
 [params]
 

@@ -8,8 +8,8 @@ const _brick_special = "res://Assets/Sprites/brick_special.png"
 const _brick_strong = "res://Assets/Sprites/brick_strong.png"
 const _brick_classic = "res://Assets/Sprites/classic_brick.png"
 	
-enum BrickType{
-	CLASSIC
+enum BrickType {
+	CLASSIC,
 	NORMAL, 
 	BONUS,
 	SPECIAL, 

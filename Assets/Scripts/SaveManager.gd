@@ -8,14 +8,14 @@ func _ready():
 	load_data()
 
 func save_data():
-	var file = File.new()
-	file.open(save_file, File.WRITE)
+	var file = FileAccess.open(save_file, FileAccess.WRITE)
 	file.store_var(data)
 	file.close()
+	
 
 func load_data():
-	var file = File.new()
-	if not file.file_exists(save_file):
+	var file = FileAccess.open(save_file, FileAccess.READ)
+	if not file == null:
 		data = {
 			"is_afterlife": false,
 			#"current_paddle": "res://Assets/Prefabs/Paddle/ClassicPaddle.tscn",
@@ -24,6 +24,5 @@ func load_data():
 			"owned_balls": ["res://Assets/Prefabs/Ball/ClassicBall.tscn"]
 		}
 		save_data()
-	file.open(save_file, File.READ)
 	data = file.get_var()
 	file.close()

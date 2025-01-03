@@ -1,8 +1,8 @@
 extends Control
 
 const health_frame = "res://Assets/Frames/Environment/Health.tres"
-onready var health_container = $HealthContainer
-onready var health_icon = $HealthContainer/Health
+@onready var health_container = $HealthContainer
+@onready var health_icon = $HealthContainer/Health
 
 func _ready():
 	var lives = PlayerData.player_health

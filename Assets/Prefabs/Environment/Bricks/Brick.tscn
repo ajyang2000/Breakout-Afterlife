@@ -12,6 +12,6 @@ script = ExtResource( 1 )
 position = Vector2( 24, 12 )
 shape = SubResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 centered = false
 region_rect = Rect2( 320, 0, 160, 80 )

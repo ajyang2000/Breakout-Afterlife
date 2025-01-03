@@ -2,14 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/Breakout Afterlife.mp3-12c7424b052cd0944e5f3f52b94d26d7.mp3str"
+uid="uid://bs5tgmamhyqut"
+path="res://.godot/imported/Breakout Afterlife.mp3-12c7424b052cd0944e5f3f52b94d26d7.mp3str"
 
 [deps]
 
 source_file="res://Assets/Music/Breakout Afterlife.mp3"
-dest_files=[ "res://.import/Breakout Afterlife.mp3-12c7424b052cd0944e5f3f52b94d26d7.mp3str" ]
+dest_files=["res://.godot/imported/Breakout Afterlife.mp3-12c7424b052cd0944e5f3f52b94d26d7.mp3str"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

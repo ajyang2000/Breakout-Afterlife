@@ -1,0 +1,7 @@
+res://default_env.tres
+res://Scenes/Menus/TitleMenu.tscn
+res://Assets/Scripts/SaveManager.gd
+res://Assets/Scripts/SceneTransition.gd
+res://Assets/Scripts/Environment/BrickData.gd
+res://Assets/Scripts/Ball/Ball.gd
+res://Assets/Scripts/Audio/AudioManager.gd

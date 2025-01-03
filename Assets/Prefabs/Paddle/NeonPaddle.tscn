@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/Prefabs/Paddle/Paddle.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Sprites/paddle_neon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/paddle_neon.png" type="Texture2D" id=2]
 
 [node name="NeonPaddle" instance=ExtResource( 1 )]
 slots = 3
 speed = 3
 
-[node name="Sprite" parent="." index="0"]
+[node name="Sprite2D" parent="." index="0"]
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" parent="." index="1"]

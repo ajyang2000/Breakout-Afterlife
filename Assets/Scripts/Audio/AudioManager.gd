@@ -39,7 +39,7 @@ func _ready():
 	_initialize_dictionaries()
 
 func _process(_delta):
-	if not _queued_players.empty():
+	if not _queued_players.is_empty():
 		var audio_player = _queued_players.pop_front()
 		audio_player.play()
 
@@ -87,10 +87,10 @@ func _get_player(is_music : bool, type : int) -> Node:
 		return null
 	
 	var audio_player
-	if _available_players.empty():
+	if _available_players.is_empty():
 		audio_player = AudioStreamPlayer.new()
 		add_child(audio_player)
-		audio_player.connect("finished", self, "_on_stream_finished", [audio_player])
+		audio_player.connect("finished", Callable(self, "_on_stream_finished").bind(audio_player))
 	else:
 		audio_player = _available_players.pop_front()
 	audio_player.stream = load(audio_dict[type])
@@ -108,7 +108,7 @@ func _on_stream_finished(audio_player):
 	for type in _playing_sfx.keys():
 		var index = _playing_sfx[type].find(audio_player)
 		if (index != -1):
-			_playing_sfx[type].remove(index)
+			_playing_sfx[type].remove_at(index)
 	
 	
 	if audio_player == _playing_music:

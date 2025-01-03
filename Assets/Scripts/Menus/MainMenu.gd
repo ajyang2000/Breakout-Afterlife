@@ -1,7 +1,7 @@
 extends Node2D
 
-onready var title_text = $MarginContainer/VBoxContainer/Title
-onready var start_button = $MarginContainer/VBoxContainer/VBoxContainer/Start/StartButton
+@onready var title_text = $MarginContainer/VBoxContainer/Title
+@onready var start_button = $MarginContainer/VBoxContainer/VBoxContainer/Start/StartButton
 
 func _ready():
 	title_text.text = GameManager.get_title()
@@ -20,12 +20,12 @@ func _process(_delta):
 
 func _start_game():
 	if (GameManager.is_afterlife):
-		SceneTransition.change_scene(SceneTransition.main_game_scene)
+		SceneTransition.change_scene_to_file(SceneTransition.main_game_scene)
 	else:
-		SceneTransition.change_scene(SceneTransition.classic_game_scene)
+		SceneTransition.change_scene_to_file(SceneTransition.classic_game_scene)
 
 func _go_to_credits():
-	SceneTransition.change_scene(SceneTransition.credits_scene)
+	SceneTransition.change_scene_to_file(SceneTransition.credits_scene)
 	
 func _quit_game():
 	get_tree().quit()

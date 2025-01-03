@@ -3,9 +3,9 @@ extends Node
 const _brick = preload("res://Assets/Prefabs/Environment/Bricks/Brick.tscn")
 const _level_config = preload("res://Assets/Scripts/Configs/AfterlifeDynamicLevelConfigs.gd")
 
-export var offset = Vector2(128, 24)
-export var max_columns = 14
-export var is_boss_level = false
+@export var offset = Vector2(128, 24)
+@export var max_columns = 14
+@export var is_boss_level = false
 
 var _bricks = []
 
@@ -19,20 +19,20 @@ func _ready():
 	
 	for column in range(columns):
 		for row in range(rows):
-			var random = rand_range(0, 1)
+			var random = randf_range(0, 1)
 			if random < empty_brick_range:
 				pass
 			elif random < (empty_brick_range + 0.03):
-				var brick = _brick.instance()
+				var brick = _brick.instantiate()
 				_init_brick(brick, BrickData.BrickType.SPECIAL, row, column, true, columns, rows)
 			elif random < (empty_brick_range + 0.04):
-				var brick = _brick.instance()
+				var brick = _brick.instantiate()
 				_init_brick(brick, BrickData.BrickType.BONUS, row, column, true, columns, rows)
 			elif random < (empty_brick_range + 0.04 + GameManager.level / 100.0):
-				var brick = _brick.instance()
+				var brick = _brick.instantiate()
 				_init_brick(brick, BrickData.BrickType.STRONG, row, column, true, columns, rows)
 			else:
-				var brick = _brick.instance()
+				var brick = _brick.instantiate()
 				_init_brick(brick, BrickData.BrickType.NORMAL, row, column, true, columns, rows)
 
 func _physics_process(delta):

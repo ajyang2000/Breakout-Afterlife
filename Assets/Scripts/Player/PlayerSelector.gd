@@ -9,9 +9,9 @@ signal control_start
 func _ready():
 	var paddle
 	if (GameManager.is_afterlife):
-		paddle = load(inventory.get_current_paddle()).instance()
+		paddle = load(inventory.get_current_paddle()).instantiate()
 	else:
-		paddle = load(inventory.classic_paddle).instance()
+		paddle = load(inventory.classic_paddle).instantiate()
 
 	add_child(paddle)
 

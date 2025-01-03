@@ -13,12 +13,12 @@ enum AnimationType{
 	FADE
 }
 
-func change_scene(target: String, animationType = AnimationType.FADE):
-	previous_scene = get_tree().current_scene.filename
+func change_scene_to_file(target: String, animationType = AnimationType.FADE):
+	previous_scene = get_tree().current_scene.get_name()
 	match animationType:
 		AnimationType.FADE:
 			$AnimationPlayer.play("Dissolve")
-			yield($AnimationPlayer, "animation_finished")
-			if get_tree().change_scene(target) != OK:
+			await $AnimationPlayer.animation_finished
+			if get_tree().change_scene_to_file(target) != OK:
 				print("An unexpected error occured when trying to switch to %s" % target)
 			$AnimationPlayer.play_backwards("Dissolve")
